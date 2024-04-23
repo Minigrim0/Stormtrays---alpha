@@ -57,6 +57,7 @@ InfoLvl5Img          = "../Img/Lvl5Info.png"
 Coin                 = "../Img/GoldIcon.png"
 DefeatTxt            = "../Img/Textes/Defeat.png"
 ScaleImg             = "../Img/Scale.png"
+Defeat_Song          = "../musique/Defeat.wav"
 
 #------------------------------------------------------------
 
@@ -83,25 +84,25 @@ ConfirmQuit    = "../Img/ConfirmQuit.png"
 
 #------------------------------------------------------------
 
-King_1         = "../Img/Perso/King_1.png"
-King_2         = "../Img/Perso/King_2.png"
-King_3         = "../Img/Perso/King_3.png"
-King_4         = "../Img/Perso/King_4.png"
-King_5         = "../Img/Perso/King_5.png"
-King_6         = "../Img/Perso/King_6.png"
+king_1         = "../Img/Perso/King_1.png"
+king_2         = "../Img/Perso/King_2.png"
+king_3         = "../Img/Perso/King_3.png"
+king_4         = "../Img/Perso/King_4.png"
+king_5         = "../Img/Perso/King_5.png"
+king_6         = "../Img/Perso/King_6.png"
 
-King_Attak     = "../Img/Perso/King_Attak.png"
-King_Attak2    = "../Img/Perso/King_Attak2.png"
+king_Attak     = "../Img/Perso/King_Attak.png"
+king_Attak2    = "../Img/Perso/King_Attak2.png"
 
-King_1Ret      = "../Img/Perso/KingRet_1.png"
-King_2Ret      = "../Img/Perso/KingRet_2.png"
-King_3Ret      = "../Img/Perso/KingRet_3.png"
-King_4Ret      = "../Img/Perso/KingRet_4.png"
-King_5Ret      = "../Img/Perso/KingRet_5.png"
-King_6Ret      = "../Img/Perso/KingRet_6.png"
+king_1Ret      = "../Img/Perso/KingRet_1.png"
+king_2Ret      = "../Img/Perso/KingRet_2.png"
+king_3Ret      = "../Img/Perso/KingRet_3.png"
+king_4Ret      = "../Img/Perso/KingRet_4.png"
+king_5Ret      = "../Img/Perso/KingRet_5.png"
+king_6Ret      = "../Img/Perso/KingRet_6.png"
 
-KingRet_Attak  = "../Img/Perso/KingRet_Attak.png"
-KingRet_Attak2 = "../Img/Perso/KingRet_Attak2.png"
+kingRet_Attak  = "../Img/Perso/KingRet_Attak.png"
+kingRet_Attak2 = "../Img/Perso/KingRet_Attak2.png"
 
 #------------------------------------------------------------
 

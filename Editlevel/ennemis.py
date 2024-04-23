@@ -20,10 +20,13 @@ class Ennemi_IG(object):
         self.PosAbsolue = (0, 0)
         self.i          = 0
         self.Returned   = False
+        self.IsAttacked = False
+        self.BlitLife   = False
         self.tab        = []
         self.tab_ret    = []
         self.Dir_x      = 0
         self.Dir_y      = 0
+        self.Tics       = 0
         
         f               = open(FichierEnnemi)
         contenu         = f.read()
@@ -36,7 +39,7 @@ class Ennemi_IG(object):
         self.vitesse = self.propriete["Speed"]
         self.Height = self.propriete["Height"]
         self.image = pygame.transform.scale(self.image2Scale, (self.Height, self.Height))
-        self.Vie_Rect_Arriere = pygame.Surface((self.vie*(60//self.vie), 3))
+        self.Vie_Rect_Arriere = pygame.Surface((self.vie*(60/self.vie), 3))
         self.Vie_Rect_Arriere.fill((255, 0, 0))
         
         for filename in glob.glob(self.propriete["ImgFolder"]):
@@ -63,8 +66,17 @@ class Ennemi_IG(object):
                 
     def bouge(self, tableau, fenetre, niveau, Liste_Mechants, coin):
         
-        self.Vie_Rect = pygame.Surface((self.vie*(60//self.vie_bas), 3))
+        self.Vie_Rect = pygame.Surface((self.vie*(60/self.vie_bas), 3))
         self.Vie_Rect.fill((0, 255, 0))
+        
+        if self.IsAttacked:
+            self.Tics += 1
+            self.BlitLife = True
+        
+        if self.Tics == 50:
+            self.IsAttacked = False
+            self.BlitLife   = False
+            self.Tics       = 0
         
         position = tableau[self.posx, self.posy]
         
@@ -106,16 +118,17 @@ class Ennemi_IG(object):
             self.posx += self.Dir_x
             self.posy += self.Dir_y
         
-            
-            fenetre.blit(self.Vie_Rect_Arriere, (self.posx*64, self.posy*64))
-            fenetre.blit(self.Vie_Rect,         (self.posx*64, self.posy*64))
+            if self.BlitLife:
+                fenetre.blit(self.Vie_Rect_Arriere, (self.posx*64, self.posy*64))
+                fenetre.blit(self.Vie_Rect,         (self.posx*64, self.posy*64))
             fenetre.blit(self.image,            (self.posx*64, self.posy*64))
                 
         else:
             
             self.PosAbsolue = (self.posx*64+(self.count*self.vitesse*self.Dir_x), self.posy*64+(self.count*self.vitesse*self.Dir_y))
-            fenetre.blit(self.Vie_Rect_Arriere, self.PosAbsolue)
-            fenetre.blit(self.Vie_Rect,         self.PosAbsolue)
+            if self.BlitLife:
+                fenetre.blit(self.Vie_Rect_Arriere, self.PosAbsolue)
+                fenetre.blit(self.Vie_Rect,         self.PosAbsolue)
             fenetre.blit(self.image,            self.PosAbsolue)
             self.HitBox = pygame.Rect          (self.PosAbsolue, (64, 64))
             self.anim()
@@ -127,6 +140,8 @@ class Ennemi_IG(object):
     def enleve_vie(self, viemoins, liste_mech, ennemi, niveau, coin):
         
         self.vie -= viemoins
+        self.IsAttacked = True
+        self.Tics = 0
         
         if self.vie <= 0:
             

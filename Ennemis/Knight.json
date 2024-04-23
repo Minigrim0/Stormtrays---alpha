@@ -4,6 +4,6 @@
 "ImgFolderRet" : "../Img/Ennemis/Chevalier/Ret/*.png",
 "DeathSound" : "../musique/mort-Chevalier.wav",
 "Height" : 64,
-"LifePts" : 40,
-"Speed" : 3
+"LifePts" : 35,
+"Speed" : 4
 }

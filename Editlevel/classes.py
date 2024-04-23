@@ -42,7 +42,7 @@ class GoldAnim(object):
         self.posy = y
         self.nbrs = n
         self.i = 0
-        myfont = pygame.font.SysFont("Viner Hand ITC", 15)
+        myfont = pygame.font.Font("../Polices/Viner Hand ITC.ttf", 15)
         self.NbrsAffiche = myfont.render(str(self.nbrs), 1, (0, 0, 0))
     
     def bouge(self, fenetre, goldImg, goldObj, niveau):
@@ -175,13 +175,65 @@ class Niveau(object):
         
         fenetre.blit(self.FondFenetre, (0, 0))
         
+    def Set_Difficulty(self, Difficulte):
+        
+        Level_Difficulty = 0
+        
+        if Difficulte == 10:
+            Difficulty =  0.05
+        if Difficulte == 9:
+            Difficulty =  0.10
+        if Difficulte == 8:
+            Difficulty =  0.12
+        if Difficulte == 7:
+            Difficulty =  0.25
+        if Difficulte == 5:
+            Difficulty =  0.5
+        if Difficulte == 6:
+            Difficulty =  0.75
+        if Difficulte == 4:
+            Difficulty =  1
+        if Difficulte == 3:
+            Difficulty =  1.25
+        if Difficulte == 2:
+            Difficulty =  1.5
+        if Difficulte == 1:
+            Difficulty =  1.75
+        if Difficulte == 0:
+            Difficulty =  2
+            
+        if self.Nombre_Ennemis_Tue >= 0:
+            Level_Difficulty = 110*Difficulty
+        if self.Nombre_Ennemis_Tue >= 10:
+            Level_Difficulty = 95*Difficulty
+        if self.Nombre_Ennemis_Tue >= 25:
+            Level_Difficulty = 60*Difficulty
+        if self.Nombre_Ennemis_Tue >= 50:
+            Level_Difficulty = 50*Difficulty
+        if self.Nombre_Ennemis_Tue >= 100:
+            Level_Difficulty = 35*Difficulty
+        if self.Nombre_Ennemis_Tue >= 200:
+            Level_Difficulty = 20*Difficulty
+        if self.Nombre_Ennemis_Tue >= 400:
+            Level_Difficulty = 16*Difficulty
+        if self.Nombre_Ennemis_Tue >= 750:
+            Level_Difficulty = 12*Difficulty
+        if self.Nombre_Ennemis_Tue >= 1000:
+            Level_Difficulty = 8*Difficulty
+        if self.Nombre_Ennemis_Tue >= 2500:
+            Level_Difficulty = 4*Difficulty
+        if self.Nombre_Ennemis_Tue >= 5000:
+            Level_Difficulty = 2*Difficulty
+            
+        return Level_Difficulty
+        
 class Screen(object):
     
     def __init__(self, size):
         
         info = pygame.display.Info()
         
-        self.Font = pygame.font.SysFont("Viner Hand ITC", 25)
+        self.Font = pygame.font.Font("../Polices/Viner Hand ITC.ttf", 25)
         
         self.nativeSize = size
         

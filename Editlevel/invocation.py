@@ -11,23 +11,13 @@ class Invocation(object):
 
     def __init__(self,  niveau, Tab, Tab_Ret, addDegats, King):
         
-        self.myfont1 = pygame.font.SysFont("Viner Hand ITC",  25)
+        self.myfont1 = pygame.font.Font("../Polices/Viner Hand ITC.ttf",  25)
         
         self.Img = pygame.image.load(Invocation_1).convert_alpha()
         self.nanim = pygame.transform.scale(self.Img, (int(96), int(96)))
-        if King.Level_Roi >= 5:
-            self.Duree_Invocation = 20
-            self.degats = 5
-        if King.Level_Roi >= 6:
-            self.Duree_Invocation = 25
-            self.degats = 7.5
-        if King.Level_Roi >= 7:
-            self.Duree_Invocation = 30
-            self.degats = 7.5
-            niveau.capacite1 = True
-        if King.Level_Roi >= 8:
-            self.Duree_Invocation = 30
-            self.degats = 16.5
+        
+        self.Duree_Invocation = King.Level_Roi*4
+        self.degats = King.Level_Roi*1.5
             
         self.i = 0
         self.tic = 0
@@ -51,11 +41,13 @@ class Invocation(object):
         self.Tab = Tab
         self.TabRet = Tab_Ret
         
+        self.xp = 0
+        
     def vit(self, fenetre, Liste_Mechants, niveau,  coin):
         
         self.tic += 1
         
-        TimeLeftPrint = self.myfont1.render(str(self.Duree_Invocation), 1, (0, 0, 0))
+        TimeLeftPrint = self.myfont1.render(str(self.Duree_Invocation), 1, (0, 0, 25))
         
         if self.tic == 24:
             self.Duree_Invocation -= 1
@@ -113,16 +105,18 @@ class Invocation(object):
                     self.nanim = self.Invocation_Attak
                     fenetre.blit(self.nanim, (self.posx, self.posy))
                     
-                elif self.Anim_King_i == 4:
+                elif self.Anim_King_i == 3:
                     self.nanim = self.Invocation_Attak2
                     fenetre.blit(self.nanim, (self.posx, self.posy))
                     
-                elif self.Anim_King_i == 8:
+                elif self.Anim_King_i == 6:
                     self.i = 6
                     self.anim(self.Tab)
                     fenetre.blit(self.nanim, (self.posx, self.posy))
                     self.Anim_King_i = 0
                     ennemi.enleve_vie(self.degats, Liste_Mechants, ennemi, niveau, coin)
+                    if ennemi.vie - self.degats <= 0:
+                        self.xp += ennemi.vie_bas/3
                     
                 self.Is_Returned = False
                     
@@ -134,16 +128,18 @@ class Invocation(object):
                     self.nanim = self.Invocation_Attak_ret
                     fenetre.blit(self.nanim, (self.posx, self.posy))
                     
-                elif self.Anim_King_i == 4:
+                elif self.Anim_King_i == 3:
                     self.nanim = self.Invocation_Attak2_ret
                     fenetre.blit(self.nanim, (self.posx, self.posy))
                     
-                elif self.Anim_King_i == 8:
+                elif self.Anim_King_i == 6:
                     self.i = 6
                     self.anim(self.TabRet)
                     fenetre.blit(self.nanim, (self.posx, self.posy))
                     self.Anim_King_i = 0
                     ennemi.enleve_vie(self.degats, Liste_Mechants, ennemi, niveau, coin)
+                    if ennemi.vie - self.degats <= 0:
+                        self.xp += ennemi.vie_bas/3
                     
                 self.Is_Returned = True
             

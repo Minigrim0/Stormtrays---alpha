@@ -3,7 +3,7 @@
 "ImgFolder" : "../Img/Ennemis/Dragon/*.png",
 "ImgFolderRet" : "../Img/Ennemis/Dragon/Ret/*.png",
 "DeathSound" : "../musique/mort-Orc.wav",
-"Height" : 56,
-"LifePts" : 200,
+"Height" : 50,
+"LifePts" : 225,
 "Speed" : 1
 }

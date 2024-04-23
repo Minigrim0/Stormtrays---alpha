@@ -21,8 +21,6 @@ pygame.mixer.init()
 
 screen = Screen((1152, 704))
 
-Defeat_Song = "../musique/Defeat.wav"
-
 Tableau_Musique = []
 for Muse in glob.glob("../musique/Themes/*.wav"):
     Music = Muse
@@ -64,43 +62,21 @@ InfoLvl5Img                = pygame.image.load(InfoLvl5Img         ).convert_alp
 Coin                       = pygame.image.load(Coin                ).convert_alpha()
 
 #------------------------------------------------------------------
-          
-King1          = pygame.image.load(King_1        ).convert_alpha()
-King2          = pygame.image.load(King_2        ).convert_alpha()
-King3          = pygame.image.load(King_3        ).convert_alpha()
-King4          = pygame.image.load(King_4        ).convert_alpha()
-King5          = pygame.image.load(King_5        ).convert_alpha()
-King6          = pygame.image.load(King_6        ).convert_alpha()
-               
-KingAttak      = pygame.image.load(King_Attak    ).convert_alpha()
-KingAttak2     = pygame.image.load(King_Attak2   ).convert_alpha()
-               
-KingRet1       = pygame.image.load(King_1Ret     ).convert_alpha()
-KingRet2       = pygame.image.load(King_2Ret     ).convert_alpha()
-KingRet3       = pygame.image.load(King_3Ret     ).convert_alpha()
-KingRet4       = pygame.image.load(King_4Ret     ).convert_alpha()
-KingRet5       = pygame.image.load(King_5Ret     ).convert_alpha()
-KingRet6       = pygame.image.load(King_6Ret     ).convert_alpha()
-               
-KingRetAttak   = pygame.image.load(KingRet_Attak ).convert_alpha()
-KingRetAttak2  = pygame.image.load(KingRet_Attak2).convert_alpha()
 
-#------------------------------------------------------------------
-
-Invoque_Anim1  = pygame.image.load(invoque_anim_1 ).convert_alpha()
-Invoque_Anim2  = pygame.image.load(invoque_anim_2 ).convert_alpha()
-Invoque_Anim3  = pygame.image.load(invoque_anim_3 ).convert_alpha()
-Invoque_Anim4  = pygame.image.load(invoque_anim_4 ).convert_alpha()
-Invoque_Anim5  = pygame.image.load(invoque_anim_5 ).convert_alpha()
-Invoque_Anim6  = pygame.image.load(invoque_anim_6 ).convert_alpha()
-Invoque_Anim7  = pygame.image.load(invoque_anim_7 ).convert_alpha()
-Invoque_Anim8  = pygame.image.load(invoque_anim_8 ).convert_alpha()
-Invoque_Anim9  = pygame.image.load(invoque_anim_9 ).convert_alpha()
-Invoque_Anim10 = pygame.image.load(invoque_anim_10).convert_alpha()
-Invoque_Anim11 = pygame.image.load(invoque_anim_11).convert_alpha()
-Invoque_Anim12 = pygame.image.load(invoque_anim_12).convert_alpha()
-Invoque_Anim13 = pygame.image.load(invoque_anim_13).convert_alpha()
-Invoque_Anim14 = pygame.image.load(invoque_anim_14).convert_alpha()
+InvoqueAnim1  = pygame.image.load(invoque_anim_1 ).convert_alpha()
+InvoqueAnim2  = pygame.image.load(invoque_anim_2 ).convert_alpha()
+InvoqueAnim3  = pygame.image.load(invoque_anim_3 ).convert_alpha()
+InvoqueAnim4  = pygame.image.load(invoque_anim_4 ).convert_alpha()
+InvoqueAnim5  = pygame.image.load(invoque_anim_5 ).convert_alpha()
+InvoqueAnim6  = pygame.image.load(invoque_anim_6 ).convert_alpha()
+InvoqueAnim7  = pygame.image.load(invoque_anim_7 ).convert_alpha()
+InvoqueAnim8  = pygame.image.load(invoque_anim_8 ).convert_alpha()
+InvoqueAnim9  = pygame.image.load(invoque_anim_9 ).convert_alpha()
+InvoqueAnim10 = pygame.image.load(invoque_anim_10).convert_alpha()
+InvoqueAnim11 = pygame.image.load(invoque_anim_11).convert_alpha()
+InvoqueAnim12 = pygame.image.load(invoque_anim_12).convert_alpha()
+InvoqueAnim13 = pygame.image.load(invoque_anim_13).convert_alpha()
+InvoqueAnim14 = pygame.image.load(invoque_anim_14).convert_alpha()
 
 #------------------------------------------------------------------
 
@@ -147,45 +123,6 @@ Fond_Menu_Principal = pygame.image.load(fondm).convert_alpha()
 
 #------------------------------------------------------------------
 
-King_1          = pygame.transform.scale(King1        , (96, 96))
-King_2          = pygame.transform.scale(King2        , (96, 96))
-King_3          = pygame.transform.scale(King3        , (96, 96))
-King_4          = pygame.transform.scale(King4        , (96, 96))
-King_5          = pygame.transform.scale(King5        , (96, 96))
-King_6          = pygame.transform.scale(King6        , (96, 96))
-                                                                
-King_Attak      = pygame.transform.scale(KingAttak    , (96, 96))
-King_Attak2     = pygame.transform.scale(KingAttak2   , (96, 96))
-                                                                
-King_1_ret      = pygame.transform.scale(KingRet1     , (96, 96))
-King_2_ret      = pygame.transform.scale(KingRet2     , (96, 96))
-King_3_ret      = pygame.transform.scale(KingRet3     , (96, 96))
-King_4_ret      = pygame.transform.scale(KingRet4     , (96, 96))
-King_5_ret      = pygame.transform.scale(KingRet5     , (96, 96))
-King_6_ret      = pygame.transform.scale(KingRet6     , (96, 96))
-                                                                
-King_Attak_ret  = pygame.transform.scale(KingRetAttak , (96, 96))
-King_Attak2_ret = pygame.transform.scale(KingRetAttak2, (96, 96))
-
-#------------------------------------------------------------------
-
-InvoqueAnim1  = pygame.transform.scale(Invoque_Anim1 , (96, 96))
-InvoqueAnim2  = pygame.transform.scale(Invoque_Anim2 , (96, 96))
-InvoqueAnim3  = pygame.transform.scale(Invoque_Anim3 , (96, 96))
-InvoqueAnim4  = pygame.transform.scale(Invoque_Anim4 , (96, 96))
-InvoqueAnim5  = pygame.transform.scale(Invoque_Anim5 , (96, 96))
-InvoqueAnim6  = pygame.transform.scale(Invoque_Anim6 , (96, 96))
-InvoqueAnim7  = pygame.transform.scale(Invoque_Anim7 , (96, 96))
-InvoqueAnim8  = pygame.transform.scale(Invoque_Anim8 , (96, 96))
-InvoqueAnim9  = pygame.transform.scale(Invoque_Anim9 , (96, 96))
-InvoqueAnim10 = pygame.transform.scale(Invoque_Anim10, (96, 96))
-InvoqueAnim11 = pygame.transform.scale(Invoque_Anim11, (96, 96))
-InvoqueAnim12 = pygame.transform.scale(Invoque_Anim12, (96, 96))
-InvoqueAnim13 = pygame.transform.scale(Invoque_Anim13, (96, 96))
-InvoqueAnim14 = pygame.transform.scale(Invoque_Anim14, (96, 96))
-
-#------------------------------------------------------------------
-
 Invocation_1     = pygame.transform.scale(Invocation1   , (96, 96))
 Invocation_2     = pygame.transform.scale(Invocation2   , (96, 96))
 Invocation_3     = pygame.transform.scale(Invocation3   , (96, 96))
@@ -210,9 +147,6 @@ Catapulte_5 = pygame.transform.scale(Catapulte5, (64, 64))
 Catapulte_6 = pygame.transform.scale(Catapulte6, (64, 64))
 
 #------------------------------------------------------------------
-
-Perso_Tab     = [King_1,     King_2,     King_3,     King_4,     King_5,     King_6    ]
-Perso_Tab_ret = [King_1_ret, King_2_ret, King_3_ret, King_4_ret, King_5_ret, King_6_ret]
 
 #------------------------------------------------------------------
 
@@ -266,11 +200,12 @@ for filename in glob.glob("../level/mininiveau/*.png"):
     Tableau_Niveau.append(level)
     Compteur += 120
 
-myfont  = pygame.font.SysFont("monospace"     ,  25)
-myfontt = pygame.font.SysFont("Viner Hand ITC", 100)
-myfont2 = pygame.font.SysFont("Viner Hand ITC",  20)
-myfont3 = pygame.font.SysFont("Viner Hand ITC",  40)
-myfont1 = pygame.font.SysFont("Viner Hand ITC",  10)
+myfont    = pygame.font.Font("../Polices/Viner Hand ITC.ttf",  25)
+myfontt   = pygame.font.Font("../Polices/Viner Hand ITC.ttf", 100)
+myfont2   = pygame.font.Font("../Polices/Viner Hand ITC.ttf",  20)
+myfont3   = pygame.font.Font("../Polices/Viner Hand ITC.ttf",  40)
+myfont1   = pygame.font.Font("../Polices/Viner Hand ITC.ttf",  10)
+TowerFont = pygame.font.Font("../Polices/Viner Hand ITC.ttf",  35)
 
 #Tableau Liste_Tours
 num = 0  
@@ -278,7 +213,7 @@ Liste_Tours = []
 for filename in glob.glob("../Tours/*.json"):
     Liste_Tours.append(Tours(filename, num, myfont1))
     num += 1
-    
+
 #Variables de "session"
 niveau          = Niveau()
 King            = Perso()
@@ -310,7 +245,6 @@ affiche_nomTour = False
 tps             = 0
 TpsInvoc        = 0
 TpsLvl          = 0
-lvl_Num         = 1
 Anim_King_i     = 0
 message_argent  = myfont2.render("", 1, (255, 0, 0))
 position_souris = (0, 0)
@@ -611,12 +545,12 @@ while Programme_Actif:
         niveau.gold = 500
         niveau.Vie_Chateau = 100
         niveau.Nombre_Ennemis_Tue = 0
-        XpToAdd = 0
+        King.XpToAdd = 0
         King.xp = 0
         King.objectif = 10
         King.Level_Roi = 0
-        Degats_Roi = 3
-        Vitesse = 5
+        King.Degats = 3
+        King.Vitesse = 5
         TpsLvl = 0
         Icapacite1 = 0
         HaveSeenLvl5Msg = False
@@ -631,6 +565,8 @@ while Programme_Actif:
         
     while jeu:
         
+        print(King.XpToAdd)
+        
         if niveau.capacite1:
             Icapacite1 += 1
             if Icapacite1 == 160:
@@ -644,10 +580,6 @@ while Programme_Actif:
             pygame.mixer.music.load(Tableau_Musique[i])
             pygame.mixer.music.play()
         
-        if XpToAdd > 0:
-            XpToAdd -= 3
-            King.xp += 3
-        
         LvlUp = King.level_up()
         if CooldownInvoc > 0:
             CooldownInvoc -= 1
@@ -658,8 +590,8 @@ while Programme_Actif:
             
             AfficheLvlUp = True
             
-            Degats_Roi = King.Level_Roi*0.5 + 3
-            Vitesse    = King.Level_Roi*0.25 + 5
+            King.Degats = King.Level_Roi*0.5 + 3
+            King.Vitesse    = King.Level_Roi*0.25 + 5
             
         #Mort Chateau
         if niveau.Vie_Chateau <= 0:
@@ -673,8 +605,8 @@ while Programme_Actif:
         Vie_Chateau_Affiche    = myfont2.render("Bastion : "+str(niveau.Vie_Chateau) + "pv.", 1, (  0,   0,   0))
         Level_Num_Affiche      = myfont2.render("Niveau "   +str(King.Level_Roi)          , 1, (  0,   0,   0))
         Ennemi_Tue_Affiche     = myfont2.render("Victimes : "+str(niveau.Nombre_Ennemis_Tue), 1, (  0,   0,   0))
-        Degats_Roi_Affiche     = myfont2.render("Dégats : " +str(Degats_Roi)                , 1, (  0,   0,   0))
-        Vitesse_Roi_Affiche    = myfont2.render("Vitesse : "+str(Vitesse)                   , 1, (  0,   0,   0))
+        Degats_Roi_Affiche     = myfont2.render("Dégats : " +str(King.Degats)                , 1, (  0,   0,   0))
+        Vitesse_Roi_Affiche    = myfont2.render("Vitesse : "+str(King.Vitesse)                   , 1, (  0,   0,   0))
         Obj_Lvl_Txt            = myfont2.render(str(King.xp) + "/" + str(King.objectif) , 1, (  0,   0,   0))
         if TpsCoolDown != 0:
             Tps_Invoc_affiche  = myfont2.render(str(TpsCoolDown), 1, (255, 255, 255))
@@ -682,10 +614,10 @@ while Programme_Actif:
             Tps_Invoc_affiche  = None
         
         Current_Xp = pygame.Surface(((King.xp/King.objectif)*255, 18))
-        Current_Xp.fill((20, 255, 20))
+        Current_Xp.fill((0, 255, 40))
         
         niveau.affichem(screen)
-        DoAttak = King.vit(Perso_Tab, Perso_Tab_ret, Vitesse)
+        DoAttak = King.vit(King.Perso_Tab, King.Perso_Tab_ret, King.Vitesse)
         
         if DoAttak:
             if King.Is_Returned and not Anim_King and not Anim_King_Ret:
@@ -710,105 +642,18 @@ while Programme_Actif:
             
         if invocation:
             if not invocation.vit(screen, Liste_Mechants, niveau, Coin):
+                King.XpToAdd += invocation.xp
                 invocation = None
                 
         if Anim_King:
-            Anim_King_i += 1
-            
-            if Anim_King_i == 1:
-                King.nanim = King_Attak
-                
-            elif Anim_King_i == 4:
-                King.nanim = King_Attak2
-                try:
-                    if King.target.enleve_vie(Degats_Roi, Liste_Mechants, King.target, niveau, Coin):
-                        XpToAdd += King.target.vie_bas*0.33
-                except:
-                    King.target = None
-                
-            elif Anim_King_i == 8:
-                King.i = 6
-                King.anim(Perso_Tab)
-                Anim_King_i = 0
-                Anim_King = False
+            Anim_King = King.AnimKingAttak(Liste_Mechants, niveau, Coin)
         
         if Anim_King_Ret:
-            Anim_King_i += 1
-            
-            if Anim_King_i == 1:
-                King.nanim = King_Attak_ret
-                
-            elif Anim_King_i == 4:
-                King.nanim = King_Attak2_ret
-                try:
-                    if King.target.enleve_vie(Degats_Roi, Liste_Mechants, King.target, niveau, Coin):
-                        XpToAdd += King.target.vie_bas*0.33
-                except:
-                    King.target = None
-                
-            elif Anim_King_i == 8:
-                King.i = 6
-                King.anim_ret(Perso_Tab_ret)
-                Anim_King_i = 0
-                King.Is_Returned = True
-                Anim_King_Ret = False
+            Anim_King_Ret = King.AnimKingAttakRet(Liste_Mechants, niveau, Coin)
         
-        if Difficulte == 10:
-            Difficulty = 0.05
-        if Difficulte == 9:
-            Difficulty = 0.10
-        if Difficulte == 8:
-            Difficulty = 0.12
-        if Difficulte == 7:
-            Difficulty = 0.25
-        if Difficulte == 6:
-            Difficulty = 0.5
-        if Difficulte == 5:
-            Difficulty = 0.75
-        if Difficulte == 4:
-            Difficulty = 1
-        if Difficulte == 3:
-            Difficulty = 1.25
-        if Difficulte == 2:
-            Difficulty = 1.5
-        if Difficulte == 1:
-            Difficulty = 1.75
-        if Difficulte == 0:
-            Difficulty = 2
+        Level_Difficulty = niveau.Set_Difficulty(Difficulte)
         
-        if niveau.Nombre_Ennemis_Tue >= 0:
-            Level_Difficulty = 110*Difficulty
-            lvl_Num = 1
-        if niveau.Nombre_Ennemis_Tue >= 10:
-            Level_Difficulty = 95*Difficulty
-            lvl_Num = 2
-        if niveau.Nombre_Ennemis_Tue >= 25:
-            Level_Difficulty = 60*Difficulty
-            lvl_Num = 3
-        if niveau.Nombre_Ennemis_Tue >= 50:
-            Level_Difficulty = 50*Difficulty
-            lvl_Num = 4
-        if niveau.Nombre_Ennemis_Tue >= 100:
-            Level_Difficulty = 35*Difficulty
-            lvl_Num = 5
-        if niveau.Nombre_Ennemis_Tue >= 200:
-            Level_Difficulty = 20*Difficulty
-            lvl_Num = 6
-        if niveau.Nombre_Ennemis_Tue >= 400:
-            Level_Difficulty = 16*Difficulty
-            lvl_Num = 7
-        if niveau.Nombre_Ennemis_Tue >= 750:
-            Level_Difficulty = 12*Difficulty
-            lvl_Num = 8
-        if niveau.Nombre_Ennemis_Tue >= 1000:
-            Level_Difficulty = 8*Difficulty
-            lvl_Num = 9
-        if niveau.Nombre_Ennemis_Tue >= 2500:
-            Level_Difficulty = 4*Difficulty
-            lvl_Num = 10
         if niveau.Nombre_Ennemis_Tue >= 5000:
-            Level_Difficulty = 2*Difficulty
-            lvl_Num = 10
             double_invoque = True
             
         Aleatoire = random.random()*Level_Difficulty
@@ -884,14 +729,13 @@ while Programme_Actif:
                     #affiche le nom de la tour
                     if tour.tourrect.collidepoint(position_souris):
                         
-                        message = myfont2.render(tour.nom, 1, (0, 0, 0))
-                        
-                        screen.blit(message, (15,  15))
+                        StatTourCurseur = TowerFont.render(tour.nom, 1, (0, 0, 0))
+                        screen.blit(StatTourCurseur, (15,  15))
                         
                         if niveau.gold < tour.prix:
                         
-                            message_argent = myfont2.render("Vous n'avez pas assez d'argent !", 1, (255, 0, 0))
-                            screen.blit(message_argent, (15,  35))
+                            message_argent = TowerFont.render("Vous n'avez pas assez d'argent !", 1, (255, 0, 0))
+                            screen.blit(message_argent, (15,  50))
                             
         screen.blit(King.nanim, (King.posx, King.posy))
         screen.blit(FondHautDroite        , (1152 - 282,  0))
@@ -915,16 +759,15 @@ while Programme_Actif:
        
             TpsLvl += 1
             if TpsLvl < 30:
-                AnimLvlUpBlit = Tab_AnimLvlUp[TpsLvl//3]
+                screen.blit(Tab_AnimLvlUp[TpsLvl//3]  , (426, 277))
             
-            elif TpsLvl < 50:
-                AnimLvlUpBlit = Tab_AnimLvlUp[9]
+            elif TpsLvl <= 50:
+                screen.blit(Tab_AnimLvlUp[9]  , (426, 277))
             
             else:
                 TpsLvl = 0
                 AfficheLvlUp = False
                 
-            screen.blit(AnimLvlUpBlit  , (426, 277))
         
         if AfficheStatTour:
             
@@ -968,7 +811,7 @@ while Programme_Actif:
             if TpsInvoc == 120:
                 invocation = Invocation(niveau, Invoc_Tab, Invoc_Tab_ret, King.Level_Roi-5, King)
                 TpsInvoc = 0
-                King.nanim = King_1
+                King.nanim = King.King_1
                 animInvocation = False
             
             else:
@@ -1028,7 +871,7 @@ while Programme_Actif:
                                 tourSelectionee = Tours_IG(tour, num, Catapulte_Tab, Catapulte_Tab_Ret)
                                 message_argent = myfont2.render("", 1, (255, 0, 0))
                             
-            #si on est pas dans Menu_Principal tour
+            #si on est pas dans Menu des tour
             if not menu_tour:
                 
                 message_argent = myfont2.render("", 1, (255, 0, 0))
@@ -1049,7 +892,7 @@ while Programme_Actif:
                     if boutontourrect.collidepoint(event.pos):
                         menu_tour = True
                     
-                    if event.button == 3:
+                    if event.button == 3 and not animInvocation:
                         
                         if Liste_Mechants:
                         
@@ -1104,7 +947,14 @@ while Programme_Actif:
                 if event.key == K_ESCAPE:
                     pausemenu = True
                     menu_tour = False
-               
+                
+                if event.key == K_a:
+                    Accelerex2 = not Accelerex2
+                    if Accelerex2:
+                        screen.delais = 0.05/4
+                    else:
+                        screen.delais = 0.05
+                    
         screen.flip()
         
 #-----------------------------------------------------------------------------------------------------------

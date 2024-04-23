@@ -1,8 +1,8 @@
 {
-"nom" : "Catapulte Fast + Degats",
+"nom" : "Catapulte Legendaire",
 "degats" : 10,
 "vitesse tir" : 6,
-"portee" : 2,
+"portee" : 3,
 "img" : "../Img/toura1.png",
-"prix" : 5000
+"prix" : 50000
 }

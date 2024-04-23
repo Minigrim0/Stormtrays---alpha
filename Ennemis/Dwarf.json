@@ -4,6 +4,6 @@
 "ImgFolderRet" : "../Img/Ennemis/Nain/Ret/*.png",
 "DeathSound" : "../musique/mort-Goblin.wav",
 "Height" : 64,
-"LifePts" : 60,
-"Speed" : 2
+"LifePts" : 100,
+"Speed" : 1
 }

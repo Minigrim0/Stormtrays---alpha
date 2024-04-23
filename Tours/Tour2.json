@@ -1,8 +1,8 @@
 {
-"nom" : "Catapulte Slow -",
-"degats" : 8,
-"vitesse tir" : 24,
-"portee" : 4,
+"nom" : "Catapulte Precise",
+"degats" : 10,
+"vitesse tir" : 48,
+"portee" : 10,
 "img" : "../Img/toura1.png",
-"prix" : 375
+"prix" : 400
 }
