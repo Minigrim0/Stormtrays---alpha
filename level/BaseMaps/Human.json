@@ -1,0 +1,63 @@
+{
+"Image" : "../Img/FondMenu/Maps/HumanMap.png",
+"Race" : "Humain",
+"Size" : 53,
+"TotallyOwned" : 0,
+"PartsOwned" : 0,
+"HitBoxes" : [
+    {
+        "PosX"  : 331,
+        "PosY"  : 264,
+        "SizeX" : 1,
+        "SizeY" : 1
+    },
+    {
+        "PosX"  : 301,
+        "PosY"  : 282,
+        "SizeX" : 4,
+        "SizeY" : 4
+    },
+    {
+        "PosX"  : 421,
+        "PosY"  : 300,
+        "SizeX" : 1,
+        "SizeY" : 1
+    },
+    {
+        "PosX"  : 421,
+        "PosY"  : 318,
+        "SizeX" : 2,
+        "SizeY" : 3
+    },
+    {
+        "PosX"  : 481,
+        "PosY"  : 318,
+        "SizeX" : 1,
+        "SizeY" : 4
+    },
+    {
+        "PosX"  : 331,
+        "PosY"  : 354,
+        "SizeX" : 3,
+        "SizeY" : 1
+    },
+    {
+        "PosX"  : 361,
+        "PosY"  : 372,
+        "SizeX" : 4,
+        "SizeY" : 3
+    },
+    {
+        "PosX"  : 391,
+        "PosY"  : 426,
+        "SizeX" : 3,
+        "SizeY" : 3
+    },
+    {
+        "PosX"  : 421,
+        "PosY"  : 480,
+        "SizeX" : 1,
+        "SizeY" : 1
+    }
+]
+}

@@ -1,0 +1,21 @@
+{
+"Image" : "../Img/FondMenu/Maps/OgreMap.png",
+"Race" : "Ogres",
+"Size" : 5,
+"TotallyOwned" : 0,
+"PartsOwned" : 0,
+"HitBoxes" : [
+    {
+        "PosX"  : 601,
+        "PosY"  : 426,
+        "SizeX" : 3,
+        "SizeY" : 1
+    },
+    {
+        "PosX"  : 631,
+        "PosY"  : 408,
+        "SizeX" : 2,
+        "SizeY" : 1
+    }
+]
+}

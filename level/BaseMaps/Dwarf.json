@@ -1,0 +1,27 @@
+{
+"Image" : "../Img/FondMenu/Maps/DwarfMap.png",
+"Race" : "Nains",
+"Size" : 13,
+"TotallyOwned" : 0,
+"PartsOwned" : 0,
+"HitBoxes" : [
+    {
+        "PosX"  : 451,
+        "PosY"  : 480,
+        "SizeX" : 1,
+        "SizeY" : 3
+    },
+    {
+        "PosX"  : 481,
+        "PosY"  : 390,
+        "SizeX" : 1,
+        "SizeY" : 9
+    },
+    {
+        "PosX"  : 511,
+        "PosY"  : 408,
+        "SizeX" : 1,
+        "SizeY" : 4
+    }
+]
+}

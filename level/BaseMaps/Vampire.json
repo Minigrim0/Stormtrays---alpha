@@ -1,0 +1,27 @@
+{
+"Image" : "../Img/FondMenu/Maps/VampireMap.png",
+"Race" : "Vampire",
+"Size" : 4,
+"TotallyOwned" : 0,
+"PartsOwned" : 0,
+"HitBoxes" : [
+    {
+        "PosX"  : 301,
+        "PosY"  : 444,
+        "SizeX" : 1,
+        "SizeY" : 1
+    },
+    {
+        "PosX"  : 271,
+        "PosY"  : 462,
+        "SizeX" : 2,
+        "SizeY" : 1
+    },
+    {
+        "PosX"  : 271,
+        "PosY"  : 480,
+        "SizeX" : 1,
+        "SizeY" : 1
+    }
+]
+}

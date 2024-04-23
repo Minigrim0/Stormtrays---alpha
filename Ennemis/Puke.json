@@ -1,0 +1,10 @@
+{
+"Name" : "PukeMonster",
+"Img" : "../Img/Ennemis/Vomi/Vomi1.png",
+"ImgFolder" : "../Img/Ennemis/Vomi/*.png",
+"ImgFolderRet" : "../Img/Ennemis/Vomi/Ret/*.png",
+"DeathSound" : "../musique/mort-Chevalier.wav",
+"Height" : 120,
+"LifePts" : 500,
+"Speed" : 2
+}

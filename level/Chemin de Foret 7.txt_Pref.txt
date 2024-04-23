@@ -1,0 +1,2 @@
+..\Img\Fonds\fond7.png
+640/256

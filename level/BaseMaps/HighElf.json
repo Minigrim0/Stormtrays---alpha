@@ -1,0 +1,39 @@
+{
+"Image" : "../Img/FondMenu/Maps/HighElfMap.png",
+"Race" : "Haut-Elfe",
+"Size" : 15,
+"TotallyOwned" : 0,
+"PartsOwned" : 0,
+"HitBoxes" : [
+    {
+        "PosX"  : 751,
+        "PosY"  : 354,
+        "SizeX" : 1,
+        "SizeY" : 2
+    },
+    {
+        "PosX"  : 781,
+        "PosY"  : 372,
+        "SizeX" : 1,
+        "SizeY" : 2
+    },
+    {
+        "PosX"  : 721,
+        "PosY"  : 390,
+        "SizeX" : 2,
+        "SizeY" : 1
+    },
+    {
+        "PosX"  : 691,
+        "PosY"  : 408,
+        "SizeX" : 3,
+        "SizeY" : 1
+    },
+    {
+        "PosX"  : 811,
+        "PosY"  : 497,
+        "SizeX" : 3,
+        "SizeY" : 2
+    }
+]
+}

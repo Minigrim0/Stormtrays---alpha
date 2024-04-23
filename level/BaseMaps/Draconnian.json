@@ -1,0 +1,57 @@
+{
+"Image" : "../Img/FondMenu/Maps/DraconnianMap.png",
+"Race" : "Draconnien",
+"Size" : 95,
+"TotallyOwned" : 0,
+"PartsOwned" : 0,
+"HitBoxes" : [
+    {
+        "PosX"  : 511,
+        "PosY"  : 192,
+        "SizeX" : 5,
+        "SizeY" : 8
+    },
+    {
+        "PosX"  : 541,
+        "PosY"  : 336,
+        "SizeX" : 4,
+        "SizeY" : 2
+    },
+    {
+        "PosX"  : 601,
+        "PosY"  : 372,
+        "SizeX" : 4,
+        "SizeY" : 2
+    },
+    {
+        "PosX"  : 661,
+        "PosY"  : 210,
+        "SizeX" : 1,
+        "SizeY" : 9
+    },
+    {
+        "PosX"  : 691,
+        "PosY"  : 228,
+        "SizeX" : 2,
+        "SizeY" : 8
+    },
+    {
+        "PosX"  : 721,
+        "PosY"  : 372,
+        "SizeX" : 1,
+        "SizeY" : 1
+    },
+    {
+        "PosX"  : 751,
+        "PosY"  : 246,
+        "SizeX" : 1,
+        "SizeY" : 6
+    },
+    {
+        "PosX"  : 781,
+        "PosY"  : 282,
+        "SizeX" : 1,
+        "SizeY" : 4
+    }
+]
+}

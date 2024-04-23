@@ -1,0 +1,45 @@
+{
+"Image" : "../Img/FondMenu/Maps/GnomeMap.png",
+"Race" : "Gnome",
+"Size" : 22,
+"TotallyOwned" : 0,
+"PartsOwned" : 0,
+"HitBoxes" : [
+    {
+        "PosX"  : 781,
+        "PosY"  : 264,
+        "SizeX" : 1,
+        "SizeY" : 1
+    },
+    {
+        "PosX"  : 781,
+        "PosY"  : 354,
+        "SizeX" : 1,
+        "SizeY" : 1
+    },
+    {
+        "PosX"  : 811,
+        "PosY"  : 246,
+        "SizeX" : 1,
+        "SizeY" : 7
+    },
+    {
+        "PosX"  : 841,
+        "PosY"  : 228,
+        "SizeX" : 1,
+        "SizeY" : 6
+    },
+    {
+        "PosX"  : 871,
+        "PosY"  : 228,
+        "SizeX" : 1,
+        "SizeY" : 4
+    },
+    {
+        "PosX"  : 901,
+        "PosY"  : 192,
+        "SizeX" : 1,
+        "SizeY" : 3
+    }
+]
+}

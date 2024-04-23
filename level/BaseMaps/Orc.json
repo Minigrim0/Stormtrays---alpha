@@ -1,0 +1,27 @@
+{
+"Image" : "../Img/FondMenu/Maps/OrcMap.png",
+"Race" : "Orcs",
+"Size" : 14,
+"TotallyOwned" : 0,
+"PartsOwned" : 0,
+"HitBoxes" : [
+    {
+        "PosX"  : 511,
+        "PosY"  : 354,
+        "SizeX" : 1,
+        "SizeY" : 3
+    },
+    {
+        "PosX"  : 541,
+        "PosY"  : 372,
+        "SizeX" : 1,
+        "SizeY" : 6
+    },
+    {
+        "PosX"  : 571,
+        "PosY"  : 372,
+        "SizeX" : 1,
+        "SizeY" : 5
+    }
+]
+}

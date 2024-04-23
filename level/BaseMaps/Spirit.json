@@ -1,0 +1,33 @@
+{
+"Image" : "../Img/FondMenu/Maps/SpiritMap.png",
+"Race" : "Esprit",
+"Size" : 19,
+"TotallyOwned" : 0,
+"PartsOwned" : 0,
+"HitBoxes" : [
+    {
+        "PosX"  : 241,
+        "PosY"  : 390,
+        "SizeX" : 2,
+        "SizeY" : 4
+    },
+    {
+        "PosX"  : 271,
+        "PosY"  : 336,
+        "SizeX" : 1,
+        "SizeY" : 3
+    },
+    {
+        "PosX"  : 301,
+        "PosY"  : 354,
+        "SizeX" : 1,
+        "SizeY" : 5
+    },
+    {
+        "PosX"  : 331,
+        "PosY"  : 372,
+        "SizeX" : 1,
+        "SizeY" : 3
+    }
+]
+}
