@@ -1,0 +1,8 @@
+{
+"nom" : "Catapulte Fast + Degats",
+"degats" : 10,
+"vitesse tir" : 6,
+"portee" : 2,
+"img" : "../Img/toura1.png",
+"prix" : 5000
+}

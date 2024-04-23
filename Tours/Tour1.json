@@ -1,0 +1,8 @@
+{
+"nom" : "Catapulte Slow",
+"degats" : 10,
+"vitesse tir" : 36,
+"portee" : 5,
+"img" : "../Img/toura1.png",
+"prix" : 250
+}

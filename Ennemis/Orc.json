@@ -1,0 +1,9 @@
+{
+"Img" : "../Img/Ennemis/Orc/Orc1.png",
+"ImgFolder" : "../Img/Ennemis/Orc/*.png",
+"ImgFolderRet" : "../Img/Ennemis/Orc/Ret/*.png",
+"DeathSound" : "../musique/mort-Orc.wav",
+"Height" : 96,
+"LifePts" : 50,
+"Speed" : 2
+}

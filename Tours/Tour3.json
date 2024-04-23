@@ -1,0 +1,8 @@
+{
+"nom" : "Catapult Fast",
+"degats" : 6,
+"vitesse tir" : 18,
+"portee" : 3,
+"img" : "../Img/toura1.png",
+"prix" : 450
+}

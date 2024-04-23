@@ -1,0 +1,9 @@
+{
+"Img" : "../Img/Ennemis/Nain/Dwarf1.png",
+"ImgFolder" : "../Img/Ennemis/Nain/*.png",
+"ImgFolderRet" : "../Img/Ennemis/Nain/Ret/*.png",
+"DeathSound" : "../musique/mort-Goblin.wav",
+"Height" : 64,
+"LifePts" : 60,
+"Speed" : 2
+}
