@@ -4,6 +4,7 @@ from constantes import *
 from math import *
 from classes import *
 import json
+import codecs
 
 class Tours (object):
     
@@ -12,12 +13,18 @@ class Tours (object):
         f                    = open(fichiertour)
         contenu              = f.read()
         self.propriete       = json.loads(contenu)
-        self.nom             = self.propriete["nom"]
+        self.Project_Image   = self.propriete["ProjectileImg"]
         self.vitesse         = self.propriete["vitesse tir"]
+        self.VitesseProject  = self.propriete["VitesseProj"]
+        self.RoundTrajec     = self.propriete["RoundTraj"]
+        self.DirImg          = self.propriete["DirImage"]
         self.degats          = self.propriete["degats"]
         self.portee          = self.propriete["portee"]
-        self.image_menu_load = self.propriete["img"]
         self.prix            = self.propriete["prix"]
+        self.Zone            = self.propriete["Zone"]
+        self.image_menu_load = self.propriete["img"]
+        self.nom             = self.propriete["nom"]
+        
         self.image_menu      = pygame.image.load(self.image_menu_load).convert_alpha()
         self.tourrect        = pygame.Rect((18 + (64*num) + (num*10), round((704) - (72))), (64, 64))
         self.prix_affiche    = myfont1.render(str(self.prix), 1, (0, 0, 0))
@@ -29,24 +36,33 @@ class Tours (object):
     
 class Tours_IG(object):
 
-    def __init__(self, Type_Tour, num, Tab_Cata, Tab_Cata_Ret):
+    def __init__(self, Type_Tour, num, ImgsDir):
     
-        self.portee = Type_Tour.portee
-        self.nom = Type_Tour.nom
-        self.vitesse = Type_Tour.vitesse
-        self.vitesse_Projectile = 12.5
-        self.degats = Type_Tour.degats
-        self.prix = Type_Tour.prix
-        self.Tab_Image = Tab_Cata
-        self.Tab_ImageRet = Tab_Cata_Ret
+        self.vitesse_Projectile = Type_Tour.VitesseProject
+        self.Projectile_Image   = Type_Tour.Project_Image
+        self.RoundTraj          = Type_Tour.RoundTrajec
+        self.vitesse            = Type_Tour.vitesse
+        self.degats             = Type_Tour.degats
+        self.portee             = Type_Tour.portee
+        self.prix               = Type_Tour.prix
+        self.Zone_Degats        = Type_Tour.Zone
+        self.nom                = Type_Tour.nom
+        self.t0                 = self.vitesse/6
+        self.Position_IG        = [0, 0]
+        self.Tab_Image          = []
+        self.EnnemiKilled       = 0
+        self.TotalDegats        = 0
+        self.tps                = 0
+        self.i                  = 0
+        self.Has_Ennemi2Attack  = False
+        self.Is_Returned        = False
+        self.frappe             = False
+        
+        for Img2Load in glob.glob(ImgsDir):
+            Img = pygame.image.load(Img2Load).convert_alpha()
+            self.Tab_Image.append(Img)
+        self.Tab_ImageRet = [pygame.transform.flip(c, True, False) for c in self.Tab_Image]
         self.image = self.Tab_Image[0]
-        self.Position_IG = [0, 0]
-        self.i = 0
-        self.frappe = False
-        self.Is_Returned = False
-        self.tps = 0
-        self.Has_Ennemi2Attack = False
-        self.t0 = self.vitesse/6
     
     def bougetoursouris(self, possouris, fenetre):
         
@@ -96,7 +112,8 @@ class Tours_IG(object):
                 
                     self.Ennemi2Attack = ennemi
                     self.i = 1
-                    self.projectile = Projectile(self.position_Absolue, self.Ennemi2Attack, self.degats, t, self.vitesse_Projectile)
+                    self.projectile = Projectile(t, self, ennemi)
+                    
                     
                     if self.projectile.delta_x > 0:
                         self.Is_Returned = True
@@ -132,28 +149,52 @@ class Tours_IG(object):
             
 class Projectile(object):
     
-    def __init__(self, PosTour, ennemi, degats, t, vitesse):
+    def __init__(self, t, tower, ennemi):
         
-        self.vitesse = vitesse
+        self.vitesse = tower.vitesse_Projectile
 
-        self.image = pygame.image.load("../Img/Projectile.png").convert_alpha()
+        image2rot = pygame.image.load(tower.Projectile_Image).convert_alpha()
         
         NewPosEnnemi_x = ennemi.PosAbsolue[0] + ennemi.vitesse * ennemi.Dir_x * t
         NewPosEnnemi_y = ennemi.PosAbsolue[1] + ennemi.vitesse * ennemi.Dir_y * t
         
-        self.delta_x = (NewPosEnnemi_x - PosTour[0])
-        self.delta_y = (NewPosEnnemi_y - PosTour[1])
+        self.delta_x = (NewPosEnnemi_x - tower.Position_IG[0]*64)
+        self.delta_y = (NewPosEnnemi_y - tower.Position_IG[1]*64)
         
         self.Dist = sqrt(self.delta_x**2 + self.delta_y**2)
         
-        self.Centre_d_x = (NewPosEnnemi_x + PosTour[0])/2
-        self.Centre_d_y = (NewPosEnnemi_y + PosTour[1])/2
+        if self.delta_x != 0:
+            Angle = -atan(self.delta_y/self.delta_x)
+            if self.delta_x > 0:
+                Angle -= pi
+            Angle = Angle*180/pi
+        else:
+            if ennemi.posy < tower.Position_IG[1]:
+                Angle = -90
+            else:
+                Angle = 90
         
-        self.degats = degats
+        self.image = self.rot_center(image2rot, Angle)
+        
+        self.Centre_d_x = (NewPosEnnemi_x + tower.Position_IG[0]*64)/2
+        self.Centre_d_y = (NewPosEnnemi_y + tower.Position_IG[1]*64)/2
+        
+        self.degats = tower.degats
         
         self.Compteur = -1
         
-    def Avance(self, fenetre, ListeEnnemis, niveau, coin, Tab_Projectile):
+        self.tower = tower
+        
+    def rot_center(self, image, angle):
+    
+        orig_rect = image.get_rect()
+        rot_image = pygame.transform.rotate(image, angle)
+        rot_rect = orig_rect.copy()
+        rot_rect.center = rot_image.get_rect().center
+        rot_image = rot_image.subsurface(rot_rect).copy()
+        return rot_image
+        
+    def Avance(self, fenetre, ListeEnnemis, niveau, coin, Tab_Projectile, King):
         
         self.Compteur += 2*self.vitesse/self.Dist
         Has_attacked = False
@@ -161,7 +202,7 @@ class Projectile(object):
         x0 = self.Centre_d_x + self.Compteur*(self.delta_x/2)
         y0 = self.Centre_d_y + self.Compteur*(self.delta_y/2)
         
-        h  = (1 - self.Compteur**2) * 0.5 * self.Dist
+        h  = (1 - self.Compteur**2) * self.tower.RoundTraj * self.Dist
         
         x = x0
         y = y0 - h
@@ -169,8 +210,18 @@ class Projectile(object):
         fenetre.blit(self.image, (x, y))
         
         if self.Compteur >= 1:
-            for ennemi in ListeEnnemis:
-                if sqrt(((x - ennemi.PosAbsolue[0]) ** 2) + (y - ennemi.PosAbsolue[1]) ** 2) < 64:
-                    ennemi.enleve_vie(self.degats, ListeEnnemis, ennemi, niveau, coin)
-                    
+            if self.tower.Zone_Degats == "Y":
+                for ennemi in ListeEnnemis:
+                    if sqrt(((x - ennemi.PosAbsolue[0]) ** 2) + (y - ennemi.PosAbsolue[1]) ** 2) < 64:
+                        if ennemi.enleve_vie(self.degats, ListeEnnemis, ennemi, niveau, coin, King):
+                            self.tower.EnnemiKilled += 1
+                        self.tower.TotalDegats += self.degats
+            else:
+                for ennemi in ListeEnnemis:
+                    if sqrt(((x - ennemi.PosAbsolue[0]) ** 2) + (y - ennemi.PosAbsolue[1]) ** 2) < 64:
+                        if ennemi.enleve_vie(self.degats, ListeEnnemis, ennemi, niveau, coin, King):
+                            self.tower.EnnemiKilled += 1
+                        self.tower.TotalDegats += self.degats
+                        break
+                        
             Tab_Projectile.remove(self)

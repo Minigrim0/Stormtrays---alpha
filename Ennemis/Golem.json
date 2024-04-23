@@ -1,4 +1,5 @@
 {
+"Name" : "Golem",
 "Img" : "../Img/Ennemis/Golem/Golem1.png",
 "ImgFolder" : "../Img/Ennemis/Golem/*.png",
 "ImgFolderRet" : "../Img/Ennemis/Golem/Ret/*.png",

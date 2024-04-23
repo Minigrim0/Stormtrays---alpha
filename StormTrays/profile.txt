@@ -1,0 +1,385 @@
+         832495 function calls (832400 primitive calls) in 133.758 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000  143.662  143.662 {built-in method exec}
+        1    1.051    1.051  143.662  143.662 Stormtrays.py:1(<module>)
+     6085    2.945    0.000  123.234    0.020 classes.py:229(flip)
+     6085    0.118    0.000   84.536    0.014 classes.py:273(Intervalle)
+     6085   84.415    0.014   84.415    0.014 {built-in method sleep}
+     6085   20.100    0.003   20.100    0.003 {built-in method smoothscale}
+   208132   15.497    0.000   15.497    0.000 {method 'blit' of 'pygame.Surface' objects}
+   188582    0.147    0.000    9.497    0.000 classes.py:236(blit)
+     5777    0.015    0.000    5.660    0.001 classes.py:174(affichem)
+     1976    3.327    0.002    3.327    0.002 {built-in method load_extended}
+      115    0.171    0.001    2.895    0.025 ennemis.py:15(__init__)
+    49419    1.512    0.000    1.512    0.000 {method 'render' of 'pygame.font.Font' objects}
+     9168    0.059    0.000    1.166    0.000 classes.py:240(GetEvent)
+    24632    0.454    0.000    1.002    0.000 ennemis.py:64(bouge)
+     6085    0.857    0.000    0.857    0.000 {built-in method get}
+    14664    0.048    0.000    0.721    0.000 TourClasse.py:76(attaque)
+       45    0.128    0.003    0.711    0.016 classes.py:124(construit)
+      359    0.011    0.000    0.626    0.002 TourClasse.py:135(__init__)
+        2    0.000    0.000    0.616    0.308 classes.py:213(resize)
+        2    0.574    0.287    0.616    0.308 {built-in method set_mode}
+     8958    0.439    0.000    0.439    0.000 {built-in method scale}
+     1976    0.411    0.000    0.411    0.000 {method 'convert_alpha' of 'pygame.Surface' objects}
+        1    0.002    0.002    0.371    0.371 classes.py:180(__init__)
+    14664    0.048    0.000    0.280    0.000 TourClasse.py:68(affiche_jeu)
+        1    0.029    0.029    0.270    0.270 ennemis.py:1(<module>)
+        1    0.000    0.000    0.250    0.250 classes.py:201(rescale)
+     5173    0.055    0.000    0.246    0.000 TourClasse.py:156(Avance)
+      167    0.204    0.001    0.208    0.001 {built-in method open}
+      233    0.003    0.000    0.190    0.001 glob.py:9(glob)
+      496    0.007    0.000    0.189    0.000 ennemis.py:127(enleve_vie)
+     1646    0.004    0.000    0.187    0.000 glob.py:20(iglob)
+      106    0.002    0.000    0.181    0.002 classes.py:39(__init__)
+        1    0.055    0.055    0.177    0.177 __init__.py:25(<module>)
+      233    0.003    0.000    0.142    0.001 glob.py:57(glob1)
+     5732    0.115    0.000    0.132    0.000 Perso.py:55(vit)
+      111    0.094    0.001    0.128    0.001 sysfont.py:534(SysFont)
+      233    0.113    0.000    0.113    0.000 {built-in method listdir}
+        1    0.018    0.018    0.076    0.076 __init__.py:9(<module>)
+        1    0.000    0.000    0.076    0.076 classes.py:153(deffond)
+     5817    0.074    0.000    0.074    0.000 {built-in method get_busy}
+        1    0.021    0.021    0.058    0.058 __init__.py:44(<module>)
+    24637    0.053    0.000    0.053    0.000 {built-in method round}
+        1    0.000    0.000    0.047    0.047 classes.py:61(__init__)
+     4050    0.046    0.000    0.047    0.000 TourClasse.py:108(Time2Impact)
+     2522    0.021    0.000    0.044    0.000 classes.py:48(bouge)
+    22305    0.043    0.000    0.043    0.000 ennemis.py:146(anim)
+    30479    0.042    0.000    0.042    0.000 {method 'fill' of 'pygame.Surface' objects}
+        1    0.018    0.018    0.042    0.042 pkgdata.py:18(<module>)
+      121    0.036    0.000    0.037    0.000 {method 'read' of '_io.TextIOWrapper' objects}
+     1693    0.007    0.000    0.033    0.000 ntpath.py:108(join)
+        1    0.000    0.000    0.031    0.031 sysfont.py:518(initsysfonts)
+        1    0.019    0.019    0.031    0.031 sysfont.py:196(initsysfonts_win32)
+        1    0.012    0.012    0.027    0.027 surfarray.py:61(<module>)
+        1    0.023    0.023    0.025    0.025 pickle.py:24(<module>)
+        1    0.023    0.023    0.023    0.023 compat.py:21(get_BytesIO)
+      233    0.004    0.000    0.023    0.000 fnmatch.py:48(filter)
+     1947    0.008    0.000    0.023    0.000 ntpath.py:188(splitdrive)
+     1693    0.003    0.000    0.022    0.000 ntpath.py:100(isabs)
+     3825    0.009    0.000    0.020    0.000 ntpath.py:84(normcase)
+        1    0.010    0.010    0.020    0.020 glob.py:1(<module>)
+    24632    0.019    0.000    0.019    0.000 {method 'set_volume' of 'Sound' objects}
+        1    0.009    0.009    0.018    0.018 random.py:37(<module>)
+     5732    0.018    0.000    0.018    0.000 Perso.py:27(level_up)
+        1    0.010    0.010    0.016    0.016 classes.py:1(<module>)
+        5    0.000    0.000    0.016    0.003 TourClasse.py:10(__init__)
+        1    0.001    0.001    0.016    0.016 sndarray.py:58(<module>)
+        1    0.015    0.015    0.015    0.015 _numpysndarray.py:34(<module>)
+        1    0.014    0.014    0.014    0.014 _numpysurfarray.py:45(<module>)
+        1    0.009    0.009    0.010    0.010 util.py:35(<module>)
+        1    0.009    0.009    0.010    0.010 fnmatch.py:11(<module>)
+      252    0.003    0.000    0.009    0.000 ntpath.py:273(split)
+       42    0.009    0.000    0.009    0.000 {built-in method rotate}
+    25708    0.009    0.000    0.009    0.000 {built-in method isinstance}
+        1    0.009    0.009    0.009    0.009 hashlib.py:53(<module>)
+     7119    0.009    0.000    0.009    0.000 {built-in method cos}
+    11924    0.008    0.000    0.008    0.000 {built-in method sqrt}
+        3    0.007    0.002    0.007    0.002 {built-in method load}
+      525    0.001    0.000    0.007    0.000 sysfont.py:36(_simplename)
+        1    0.002    0.002    0.006    0.006 __init__.py:101(<module>)
+      233    0.003    0.000    0.006    0.000 functools.py:170(wrapper)
+      525    0.004    0.000    0.005    0.000 sysfont.py:37(<listcomp>)
+      120    0.000    0.000    0.005    0.000 __init__.py:277(loads)
+     7485    0.003    0.000    0.005    0.000 ntpath.py:44(_get_sep)
+      120    0.001    0.000    0.005    0.000 decoder.py:348(decode)
+      101    0.000    0.000    0.005    0.000 re.py:267(_compile)
+       12    0.000    0.000    0.004    0.000 sre_compile.py:487(compile)
+      166    0.002    0.000    0.004    0.000 locale.py:555(getpreferredencoding)
+      225    0.001    0.000    0.004    0.000 TourClasse.py:25(affichemenu)
+       11    0.000    0.000    0.004    0.000 re.py:212(compile)
+     1385    0.004    0.000    0.004    0.000 Perso.py:43(anim)
+      699    0.002    0.000    0.004    0.000 glob.py:86(has_magic)
+     5732    0.003    0.000    0.003    0.000 {method 'random' of '_random.Random' objects}
+     1975    0.003    0.000    0.003    0.000 {method 'match' of '_sre.SRE_Pattern' objects}
+     3845    0.002    0.000    0.003    0.000 ntpath.py:50(_get_altsep)
+      949    0.003    0.000    0.003    0.000 Perso.py:49(anim_ret)
+     3638    0.002    0.000    0.003    0.000 ntpath.py:56(_get_bothseps)
+     3640    0.002    0.000    0.003    0.000 ntpath.py:68(_get_colon)
+     6087    0.003    0.000    0.003    0.000 {built-in method clock}
+    10266    0.003    0.000    0.003    0.000 {method 'lower' of 'str' objects}
+      120    0.003    0.000    0.003    0.000 decoder.py:359(raw_decode)
+        1    0.001    0.001    0.003    0.003 decoder.py:2(<module>)
+      115    0.002    0.000    0.002    0.000 ennemis.py:52(pose_ennemi)
+       12    0.000    0.000    0.002    0.000 sre_compile.py:472(_code)
+       64    0.002    0.000    0.002    0.000 {built-in method __build_class__}
+        1    0.000    0.000    0.002    0.002 process.py:35(<module>)
+      211    0.001    0.000    0.002    0.000 cp1252.py:22(decode)
+        1    0.002    0.002    0.002    0.002 sprite.py:67(<module>)
+      288    0.002    0.000    0.002    0.000 {built-in method EnumValue}
+      107    0.000    0.000    0.002    0.000 TourClasse.py:51(bougetoursouris)
+      233    0.001    0.000    0.002    0.000 glob.py:68(<listcomp>)
+        1    0.000    0.000    0.002    0.002 process.py:311(__init__)
+        2    0.002    0.001    0.002    0.001 {built-in method urandom}
+        1    0.000    0.000    0.002    0.002 Perso.py:8(__init__)
+      166    0.002    0.000    0.002    0.000 {built-in method _getdefaultlocale}
+     1703    0.002    0.000    0.002    0.000 {built-in method atan}
+       12    0.000    0.000    0.002    0.000 sre_parse.py:693(parse)
+     3827    0.002    0.000    0.002    0.000 {method 'replace' of 'str' objects}
+     2075    0.002    0.000    0.002    0.000 {built-in method sin}
+      699    0.002    0.000    0.002    0.000 {method 'search' of '_sre.SRE_Pattern' objects}
+      138    0.000    0.000    0.002    0.000 random.py:165(randrange)
+     1878    0.002    0.000    0.002    0.000 glob.py:93(_ishidden)
+      211    0.002    0.000    0.002    0.000 {built-in method charmap_decode}
+    19/12    0.000    0.000    0.002    0.000 sre_parse.py:309(_parse_sub)
+       21    0.000    0.000    0.001    0.000 sre_compile.py:179(_compile_charset)
+       18    0.001    0.000    0.001    0.000 classes.py:29(__init__)
+    36/12    0.000    0.000    0.001    0.000 sre_compile.py:33(_compile)
+     3975    0.001    0.000    0.001    0.000 {method 'append' of 'list' objects}
+     1947    0.001    0.000    0.001    0.000 ntpath.py:38(_get_empty)
+    21/12    0.001    0.000    0.001    0.000 sre_parse.py:387(_parse)
+       21    0.001    0.000    0.001    0.000 sre_compile.py:208(_optimize_charset)
+        1    0.000    0.000    0.001    0.001 sysfont.py:221(<listcomp>)
+      784    0.001    0.000    0.001    0.000 {method 'remove' of 'list' objects}
+      230    0.001    0.000    0.001    0.000 collections.py:130(move_to_end)
+        3    0.000    0.000    0.001    0.000 fnmatch.py:38(_compile_pattern)
+      138    0.001    0.000    0.001    0.000 random.py:216(_randbelow)
+        1    0.000    0.000    0.001    0.001 encoder.py:2(<module>)
+6360/6341    0.001    0.000    0.001    0.000 {built-in method len}
+      106    0.001    0.000    0.001    0.000 {method 'play' of 'Sound' objects}
+        1    0.000    0.000    0.001    0.001 scanner.py:2(<module>)
+       12    0.000    0.000    0.001    0.000 sre_compile.py:363(_compile_info)
+     6074    0.001    0.000    0.001    0.000 {method 'isalnum' of 'str' objects}
+        1    0.000    0.000    0.001    0.001 pickle.py:173(<listcomp>)
+       90    0.000    0.000    0.001    0.000 re.py:153(match)
+        1    0.000    0.000    0.001    0.001 invocation.py:1(<module>)
+        1    0.000    0.000    0.001    0.001 threading.py:1(<module>)
+        1    0.000    0.000    0.001    0.001 TourClasse.py:1(<module>)
+        9    0.001    0.000    0.001    0.000 sre_compile.py:259(_mk_bitmap)
+      195    0.000    0.000    0.001    0.000 sre_parse.py:184(__next)
+      159    0.000    0.000    0.000    0.000 sre_parse.py:209(get)
+      390    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 pkgdata.py:34(getResource)
+       12    0.000    0.000    0.000    0.000 {built-in method flip}
+      817    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+      376    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+      226    0.000    0.000    0.000    0.000 {method 'getrandbits' of '_random.Random' objects}
+    49/25    0.000    0.000    0.000    0.000 sre_parse.py:142(getwidth)
+      277    0.000    0.000    0.000    0.000 sysfont.py:41(_addfont)
+        1    0.000    0.000    0.000    0.000 functools.py:139(decorating_function)
+        1    0.000    0.000    0.000    0.000 Stormtrays.py:247(<listcomp>)
+      749    0.000    0.000    0.000    0.000 {method 'collidepoint' of 'pygame.Rect' objects}
+        1    0.000    0.000    0.000    0.000 collections.py:40(__init__)
+        1    0.000    0.000    0.000    0.000 Perso.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 _abcoll.py:493(update)
+      166    0.000    0.000    0.000    0.000 codecs.py:238(__init__)
+       18    0.000    0.000    0.000    0.000 ntpath.py:299(splitext)
+        1    0.000    0.000    0.000    0.000 {built-in method getcwd}
+        1    0.000    0.000    0.000    0.000 abc.py:158(__instancecheck__)
+      7/1    0.000    0.000    0.000    0.000 abc.py:174(__subclasscheck__)
+        1    0.000    0.000    0.000    0.000 queue.py:1(<module>)
+      115    0.000    0.000    0.000    0.000 sre_parse.py:132(__getitem__)
+        1    0.000    0.000    0.000    0.000 sprite.py:1213(GroupSingle)
+        1    0.000    0.000    0.000    0.000 threading.py:384(_Event)
+      240    0.000    0.000    0.000    0.000 {method 'end' of '_sre.SRE_Match' objects}
+        1    0.000    0.000    0.000    0.000 warnings.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 Stormtrays.py:252(<listcomp>)
+      7/1    0.000    0.000    0.000    0.000 {built-in method issubclass}
+      119    0.000    0.000    0.000    0.000 sre_parse.py:203(match)
+        3    0.000    0.000    0.000    0.000 {built-in method OpenKey}
+       18    0.000    0.000    0.000    0.000 genericpath.py:85(_splitext)
+        2    0.000    0.000    0.000    0.000 ntpath.py:529(normpath)
+        3    0.000    0.000    0.000    0.000 fnmatch.py:74(translate)
+       12    0.000    0.000    0.000    0.000 sre_parse.py:180(__init__)
+        1    0.000    0.000    0.000    0.000 locals.py:24(<module>)
+        1    0.000    0.000    0.000    0.000 ntpath.py:585(abspath)
+        1    0.000    0.000    0.000    0.000 threading.py:954(__init__)
+       16    0.000    0.000    0.000    0.000 sre_parse.py:233(_class_escape)
+        2    0.000    0.000    0.000    0.000 {built-in method dir}
+        1    0.000    0.000    0.000    0.000 classes.py:106(videtab)
+       13    0.000    0.000    0.000    0.000 re.py:230(escape)
+        3    0.000    0.000    0.000    0.000 TourClasse.py:56(placetour)
+        1    0.000    0.000    0.000    0.000 _compat_pickle.py:8(<module>)
+        8    0.000    0.000    0.000    0.000 _weakrefset.py:58(__iter__)
+        1    0.000    0.000    0.000    0.000 random.py:84(__init__)
+      138    0.000    0.000    0.000    0.000 {method 'bit_length' of 'int' objects}
+        1    0.000    0.000    0.000    0.000 random.py:93(seed)
+        3    0.000    0.000    0.000    0.000 collections.py:57(__setitem__)
+       13    0.000    0.000    0.000    0.000 sre_compile.py:356(_simple)
+        1    0.000    0.000    0.000    0.000 compat.py:1(<module>)
+       12    0.000    0.000    0.000    0.000 {built-in method compile}
+        1    0.000    0.000    0.000    0.000 threading.py:627(__init__)
+        1    0.000    0.000    0.000    0.000 ntpath.py:314(dirname)
+       49    0.000    0.000    0.000    0.000 sre_parse.py:140(append)
+       78    0.000    0.000    0.000    0.000 {built-in method min}
+        1    0.000    0.000    0.000    0.000 colordict.py:21(<module>)
+       10    0.000    0.000    0.000    0.000 sre_parse.py:265(_escape)
+        2    0.000    0.000    0.000    0.000 _abcoll.py:363(__contains__)
+        3    0.000    0.000    0.000    0.000 __init__.py:48(__init__)
+        1    0.000    0.000    0.000    0.000 sysfont.py:21(<module>)
+       36    0.000    0.000    0.000    0.000 sre_parse.py:92(__init__)
+        3    0.000    0.000    0.000    0.000 {built-in method play}
+        6    0.000    0.000    0.000    0.000 hashlib.py:94(__get_openssl_constructor)
+        1    0.000    0.000    0.000    0.000 pickle.py:781(_Unpickler)
+        3    0.000    0.000    0.000    0.000 os.py:461(__getitem__)
+        3    0.000    0.000    0.000    0.000 TourClasse.py:32(__init__)
+        1    0.000    0.000    0.000    0.000 constantes.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 posixpath.py:11(<module>)
+       54    0.000    0.000    0.000    0.000 {method 'rfind' of 'str' objects}
+       32    0.000    0.000    0.000    0.000 {method 'format' of 'str' objects}
+       53    0.000    0.000    0.000    0.000 sre_parse.py:128(__len__)
+       12    0.000    0.000    0.000    0.000 sre_parse.py:681(fix_flags)
+        1    0.000    0.000    0.000    0.000 {built-in method eval}
+       24    0.000    0.000    0.000    0.000 sre_compile.py:469(isstring)
+       12    0.000    0.000    0.000    0.000 sre_parse.py:69(__init__)
+        1    0.000    0.000    0.000    0.000 threading.py:381(Event)
+        7    0.000    0.000    0.000    0.000 _weakrefset.py:26(__exit__)
+        1    0.000    0.000    0.000    0.000 threading.py:402(set)
+        2    0.000    0.000    0.000    0.000 threading.py:172(Condition)
+        1    0.000    0.000    0.000    0.000 threading.py:388(__init__)
+       22    0.000    0.000    0.000    0.000 {built-in method max}
+       28    0.000    0.000    0.000    0.000 ntpath.py:62(_get_dot)
+        5    0.000    0.000    0.000    0.000 _weakrefset.py:36(__init__)
+       52    0.000    0.000    0.000    0.000 _compat_pickle.py:80(<genexpr>)
+        3    0.000    0.000    0.000    0.000 os.py:519(encodekey)
+        4    0.000    0.000    0.000    0.000 {built-in method allocate_lock}
+        1    0.000    0.000    0.000    0.000 process.py:87(Process)
+        1    0.000    0.000    0.000    0.000 {function seed at 0x024C0C00}
+        2    0.000    0.000    0.000    0.000 threading.py:177(__init__)
+        1    0.000    0.000    0.000    0.000 decoder.py:18(_floatconstants)
+        7    0.000    0.000    0.000    0.000 _weakrefset.py:20(__enter__)
+        1    0.000    0.000    0.000    0.000 functools.py:26(update_wrapper)
+        1    0.000    0.000    0.000    0.000 pickle.py:177(_Pickler)
+        3    0.000    0.000    0.000    0.000 compat.py:8(geterror)
+        1    0.000    0.000    0.000    0.000 sysfont.py:487(create_aliases)
+        1    0.000    0.000    0.000    0.000 random.py:68(Random)
+        8    0.000    0.000    0.000    0.000 _weakrefset.py:79(add)
+        1    0.000    0.000    0.000    0.000 threading.py:615(Thread)
+        2    0.000    0.000    0.000    0.000 copyreg.py:12(pickle)
+       21    0.000    0.000    0.000    0.000 {built-in method getattr}
+       79    0.000    0.000    0.000    0.000 sre_compile.py:25(_identityfunction)
+        1    0.000    0.000    0.000    0.000 {built-in method QueryInfoKey}
+        1    0.000    0.000    0.000    0.000 decoder.py:297(__init__)
+        6    0.000    0.000    0.000    0.000 sre_parse.py:85(closegroup)
+       42    0.000    0.000    0.000    0.000 {built-in method chr}
+        1    0.000    0.000    0.000    0.000 weakref.py:45(__init__)
+       12    0.000    0.000    0.000    0.000 _weakrefset.py:68(__contains__)
+        1    0.000    0.000    0.000    0.000 threading.py:302(notify_all)
+       10    0.000    0.000    0.000    0.000 {method 'extend' of 'list' objects}
+        2    0.000    0.000    0.000    0.000 {method 'update' of 'dict' objects}
+        6    0.000    0.000    0.000    0.000 sre_parse.py:74(opengroup)
+       43    0.000    0.000    0.000    0.000 {built-in method ord}
+       32    0.000    0.000    0.000    0.000 {method 'setdefault' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 ennemis.py:13(Ennemi_IG)
+        1    0.000    0.000    0.000    0.000 TourClasse.py:30(Tours_IG)
+       16    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+       13    0.000    0.000    0.000    0.000 sre_parse.py:136(__setitem__)
+        1    0.000    0.000    0.000    0.000 threading.py:284(notify)
+        4    0.000    0.000    0.000    0.000 {built-in method proxy}
+        5    0.000    0.000    0.000    0.000 {method 'setter' of 'property' objects}
+        1    0.000    0.000    0.000    0.000 threading.py:439(Barrier)
+        3    0.000    0.000    0.000    0.000 os.py:513(check_str)
+        1    0.000    0.000    0.000    0.000 sprite.py:221(DirtySprite)
+        7    0.000    0.000    0.000    0.000 _weakrefset.py:52(_commit_removals)
+        1    0.000    0.000    0.000    0.000 {built-in method exp}
+        6    0.000    0.000    0.000    0.000 {built-in method exc_info}
+        1    0.000    0.000    0.000    0.000 {built-in method set_volume}
+       15    0.000    0.000    0.000    0.000 {method 'add' of 'set' objects}
+        1    0.000    0.000    0.000    0.000 invocation.py:10(Invocation)
+        1    0.000    0.000    0.000    0.000 {method 'union' of 'set' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method stop}
+        1    0.000    0.000    0.000    0.000 sprite.py:613(LayeredUpdates)
+        1    0.000    0.000    0.000    0.000 sprite.py:284(AbstractGroup)
+        1    0.000    0.000    0.000    0.000 sprite.py:106(Sprite)
+        1    0.000    0.000    0.000    0.000 {built-in method unpack}
+        1    0.000    0.000    0.000    0.000 weakref.py:200(update)
+        4    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 queue.py:21(Queue)
+        2    0.000    0.000    0.000    0.000 {built-in method getwindowsversion}
+        2    0.000    0.000    0.000    0.000 {method 'acquire' of '_thread.lock' objects}
+        7    0.000    0.000    0.000    0.000 _weakrefset.py:16(__init__)
+        1    0.000    0.000    0.000    0.000 cursors.py:32(<module>)
+        1    0.000    0.000    0.000    0.000 Perso.py:6(Perso)
+        1    0.000    0.000    0.000    0.000 {built-in method _getfullpathname}
+        1    0.000    0.000    0.000    0.000 TourClasse.py:8(Tours)
+        1    0.000    0.000    0.000    0.000 threading.py:719(_set_ident)
+        1    0.000    0.000    0.000    0.000 functools.py:54(wraps)
+        7    0.000    0.000    0.000    0.000 {method '__subclasses__' of 'type' objects}
+        7    0.000    0.000    0.000    0.000 _abcoll.py:118(__subclasshook__)
+        1    0.000    0.000    0.000    0.000 threading.py:175(_Condition)
+        1    0.000    0.000    0.000    0.000 sprite.py:943(LayeredDirty)
+        3    0.000    0.000    0.000    0.000 {method 'upper' of 'str' objects}
+        4    0.000    0.000    0.000    0.000 threading.py:45(__init__)
+        1    0.000    0.000    0.000    0.000 threading.py:217(_is_owned)
+        1    0.000    0.000    0.000    0.000 queue.py:229(PriorityQueue)
+        1    0.000    0.000    0.000    0.000 classes.py:59(Niveau)
+        1    0.000    0.000    0.000    0.000 __init__.py:46(MissingModule)
+        2    0.000    0.000    0.000    0.000 {built-in method hasattr}
+        1    0.000    0.000    0.000    0.000 {built-in method unhexlify}
+        1    0.000    0.000    0.000    0.000 __init__.py:152(WorkerQueue)
+        2    0.000    0.000    0.000    0.000 {built-in method log}
+        1    0.000    0.000    0.000    0.000 classes.py:178(Screen)
+        1    0.000    0.000    0.000    0.000 decoder.py:267(JSONDecoder)
+        1    0.000    0.000    0.000    0.000 functools.py:119(lru_cache)
+        1    0.000    0.000    0.000    0.000 encoder.py:67(JSONEncoder)
+        1    0.000    0.000    0.000    0.000 random.py:623(SystemRandom)
+        1    0.000    0.000    0.000    0.000 encoder.py:98(__init__)
+       11    0.000    0.000    0.000    0.000 _compat_pickle.py:81(<genexpr>)
+        4    0.000    0.000    0.000    0.000 {built-in method setattr}
+        1    0.000    0.000    0.000    0.000 TourClasse.py:133(Projectile)
+        1    0.000    0.000    0.000    0.000 threading.py:95(_RLock)
+        2    0.000    0.000    0.000    0.000 ntpath.py:74(_get_special)
+        1    0.000    0.000    0.000    0.000 warnings.py:289(catch_warnings)
+        1    0.000    0.000    0.000    0.000 {built-in method openssl_md5}
+        1    0.000    0.000    0.000    0.000 threading.py:43(_Verbose)
+        1    0.000    0.000    0.000    0.000 sprite.py:586(OrderedUpdates)
+        1    0.000    0.000    0.000    0.000 {built-in method from_bytes}
+        1    0.000    0.000    0.000    0.000 threading.py:311(_Semaphore)
+        1    0.000    0.000    0.000    0.000 {method 'release' of '_thread.lock' objects}
+        2    0.000    0.000    0.000    0.000 copyreg.py:22(constructor)
+        1    0.000    0.000    0.000    0.000 util.py:170(Finalize)
+        6    0.000    0.000    0.000    0.000 {built-in method globals}
+        2    0.000    0.000    0.000    0.000 {method 'lstrip' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 queue.py:248(LifoQueue)
+        1    0.000    0.000    0.000    0.000 version.py:28(<module>)
+        1    0.000    0.000    0.000    0.000 warnings.py:88(_processoptions)
+        1    0.000    0.000    0.000    0.000 threading.py:992(_DummyThread)
+        1    0.000    0.000    0.000    0.000 threading.py:923(_Timer)
+        4    0.000    0.000    0.000    0.000 {built-in method callable}
+        1    0.000    0.000    0.000    0.000 queue.py:13(Empty)
+        1    0.000    0.000    0.000    0.000 warnings.py:269(WarningMessage)
+        1    0.000    0.000    0.000    0.000 classes.py:37(GoldAnim)
+        1    0.000    0.000    0.000    0.000 {built-in method openssl_sha224}
+        1    0.000    0.000    0.000    0.000 {built-in method openssl_sha512}
+        1    0.000    0.000    0.000    0.000 {built-in method set_repeat}
+        1    0.000    0.000    0.000    0.000 threading.py:369(_BoundedSemaphore)
+        1    0.000    0.000    0.000    0.000 sprite.py:1292(collide_rect_ratio)
+        1    0.000    0.000    0.000    0.000 pickle.py:79(UnpicklingError)
+        1    0.000    0.000    0.000    0.000 pickle.py:92(_Stop)
+        1    0.000    0.000    0.000    0.000 {built-in method init}
+        1    0.000    0.000    0.000    0.000 sprite.py:531(Group)
+        1    0.000    0.000    0.000    0.000 classes.py:27(Levels)
+        1    0.000    0.000    0.000    0.000 sprite.py:557(RenderUpdates)
+        1    0.000    0.000    0.000    0.000 warnings.py:83(_OptionError)
+        1    0.000    0.000    0.000    0.000 pickle.py:68(PickleError)
+        1    0.000    0.000    0.000    0.000 {built-in method openssl_sha1}
+        1    0.000    0.000    0.000    0.000 __init__.py:210(FuncResult)
+        1    0.000    0.000    0.000    0.000 {built-in method openssl_sha384}
+        1    0.000    0.000    0.000    0.000 util.py:337(ForkAwareLocal)
+        1    0.000    0.000    0.000    0.000 pkgdata.py:29(resource_exists)
+        1    0.000    0.000    0.000    0.000 process.py:309(_MainProcess)
+        1    0.000    0.000    0.000    0.000 __init__.py:74(BufferTooShort)
+        1    0.000    0.000    0.000    0.000 {built-in method register}
+        1    0.000    0.000    0.000    0.000 {built-in method openssl_sha256}
+        1    0.000    0.000    0.000    0.000 {built-in method get_ident}
+        1    0.000    0.000    0.000    0.000 threading.py:50(_note)
+        1    0.000    0.000    0.000    0.000 __init__.py:71(ProcessError)
+        1    0.000    0.000    0.000    0.000 pickle.py:72(PicklingError)
+        1    0.000    0.000    0.000    0.000 {built-in method Info}
+        1    0.000    0.000    0.000    0.000 __init__.py:77(TimeoutError)
+        1    0.000    0.000    0.000    0.000 queue.py:17(Full)
+        1    0.000    0.000    0.000    0.000 sprite.py:1372(collide_circle_ratio)
+        1    0.000    0.000    0.000    0.000 process.py:295(AuthenticationString)
+        1    0.000    0.000    0.000    0.000 util.py:330(ForkAwareThreadLock)
+        1    0.000    0.000    0.000    0.000 threading.py:952(_MainThread)
+        1    0.000    0.000    0.000    0.000 threading.py:595(BrokenBarrierError)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        1    0.000    0.000    0.000    0.000 __init__.py:80(AuthenticationError)
+        1    0.000    0.000    0.000    0.000 threading.py:961(_set_daemon)
+        7    0.000    0.000    0.000    0.000 {method 'remove' of 'set' objects}
+
+

@@ -7,7 +7,8 @@ import glob
 import os
 from math import *
 import time
-import json
+import random
+import tkinter
 
 def FindAngle(delta_x, delta_y):
     
@@ -42,7 +43,7 @@ class GoldAnim(object):
         self.posy = y
         self.nbrs = n
         self.i = 0
-        myfont = pygame.font.Font("../Polices/Viner Hand ITC.ttf", 15)
+        myfont = pygame.font.SysFont("Viner Hand ITC", 15)
         self.NbrsAffiche = myfont.render(str(self.nbrs), 1, (0, 0, 0))
     
     def bouge(self, fenetre, goldImg, goldObj, niveau):
@@ -60,6 +61,10 @@ class Niveau(object):
     
     def __init__(self):
     
+        self.Tableau_Musique = []
+        for Muse in glob.glob("../musique/Themes/*.wav"):
+            self.Tableau_Musique.append(Muse)
+        
         self.img = {}
         self.img["c1", 0] = pygame.image.load(chem1).convert_alpha()
         self.img["t2", 0] = pygame.image.load(tour2).convert_alpha()
@@ -85,6 +90,7 @@ class Niveau(object):
         self.imgE["p1", 0] = pygame.image.load(poubelleE).convert_alpha()
         self.imgE["k1", 0] = pygame.image.load(fort1E).convert_alpha()
         self.imgE["v1", 0] = pygame.image.load(Vide1E).convert_alpha()
+        self.imgE["QG", 0] = pygame.image.load("../Img/QuestGiverF1.png").convert_alpha()
         for rot in [90, 180, 270]:
             self.imgE["c1",rot] = pygame.transform.rotate(self.imgE["c1",0], rot)
             self.imgE["t2",rot] = pygame.transform.rotate(self.imgE["t2",0], rot)
@@ -93,15 +99,54 @@ class Niveau(object):
             self.imgE["p1",rot] = pygame.transform.rotate(self.imgE["p1",0], rot)
             self.imgE["k1",rot] = pygame.transform.rotate(self.imgE["k1",0], rot)
             self.imgE["v1",rot] = pygame.transform.rotate(self.imgE["v1",0], rot)
+            self.imgE["QG",rot] = pygame.transform.rotate(self.imgE["QG",0], rot)
         
         self.videtab()
         
         self.gold = 500
         self.Vie_Chateau = 100
         self.Nombre_Ennemis_Tue = 0
-        self.capacite1 = False
+        self.fondimg = pygame.image.load("../Img/fond.png").convert_alpha()
         
         self.GoldTab = []
+       
+    def Cinematic(self, screen, myfont3, myfontt):
+        
+        TabTexts = []
+        TabTexts.append("Les forces du mal se sont réveillées...")
+        TabTexts.append("Le seigneur des ténébres souhaite la ddestruction d'un peuple")
+        TabTexts.append("qui l'a autrefois détruit.")
+        TabTexts.append("Les principales puissances d'Ethsilaar sont faibles et vous")
+        TabTexts.append("avez été appelé comme mercanaire pour empêcher le mal de")
+        TabTexts.append("se répendre.")
+        TabTexts.append("Bonne chance...")
+        STORMTRAYS = "STORMTRAYS"
+        Texti    = ""
+        
+        fondu = pygame.image.load(sombre__).convert_alpha()
+        
+        for x in range(5):
+            screen.blit(fondu, (0,0))
+            screen.flip()
+        
+        y = 20
+        for Text in TabTexts:
+            for Char in Text:
+                Texti += Char
+                Textb = myfont3.render(Texti, 1, (255, 255, 255))
+                screen.blit(Textb, (10, y))
+                screen.flip()
+            Texti = ""
+            y += 50
+            
+        for Char in STORMTRAYS:
+            Texti += Char
+            Textb = myfontt.render(Texti, 1, (255, 255, 255))
+            screen.blit(Textb, (230, 425))
+            screen.flip()
+            time.sleep(0.2)
+            
+        time.sleep(0.5)
         
     def videtab(self):
         self.tableau = {}
@@ -116,10 +161,14 @@ class Niveau(object):
                 img,rot = self.tableau[x,y]
                 f.write("%s%d/" % (img, rot/90))
             f.write("\n")
-    
-    def sauveF(self, nomfichier, Fond):
+         
+    def sauveF(self, nomfichier, Fond, QGPos):
         f = open (nomfichier+"_Pref.txt", "w")
         f.write(Fond)
+        Posx = QGPos[0]
+        Posy = QGPos[1]
+        f.write("\n")
+        f.write(str(Posx) + "/" + str(Posy))
         
     def construit(self, nomfichier):
         f = open(nomfichier)
@@ -137,13 +186,18 @@ class Niveau(object):
         for y in range(11):
             for x in range(18):
                 lettre,rot = self.tableau[x,y]
-                if lettre != "  " and lettre != "k1":
+                if lettre != "  " and lettre != "k1" and lettre != "QG":
                     img = pygame.transform.scale(self.img[lettre,rot],(int(65), int(65)))
                     self.FondFenetre.blit(img, (int((x*64)), int((y*64))))
                 elif lettre == "k1":
-                    img = pygame.transform.scale(self.img[lettre,rot],(int(64), int((3*64))))
-                    self.FondFenetre.blit(img, (int((x*64)), int((y*64))))
-                    self.pos_Chateau = [x, y+1]
+                    if rot == 90 or rot == 270:
+                        img = pygame.transform.scale(self.img[lettre,rot],(int(64), int((3*64))))
+                        self.FondFenetre.blit(img, (int((x*64)), int((y*64))))
+                        self.pos_Chateau = [x, y+1]
+                    else:
+                        img = pygame.transform.scale(self.img[lettre,rot],(int(3*64), int((64))))
+                        self.FondFenetre.blit(img, (int((x*64)), int((y*64))))
+                        self.pos_Chateau = [x+1, y]
                     
             try:
                 self.FondFenetre.blit(self.nanim, (self.posx, self.posy))
@@ -152,7 +206,13 @@ class Niveau(object):
                 
     def deffond(self, nomfichier):
         f = open(nomfichier+"_Pref.txt", "r")
-        image = f.read()
+        imagetl = f.read()
+        image = ""
+        for char in imagetl:
+            if char != '\n':
+                image += char
+            else:
+                break
         self.fondimg = pygame.image.load(image).convert_alpha()
             
     def affiche(self, fenetre, fond):
@@ -160,8 +220,25 @@ class Niveau(object):
         for y in range(11):
             for x in range(18):
                 lettre,rot = self.tableau[x,y]
-                if lettre != "  ":
+                if lettre != "  " and lettre != "QG":
                     fenetre.blit(self.img[lettre,rot], (x*64,y*64))
+    
+    def ConvertToHMS(self, Time):
+        
+        M = floor(Time/60)
+        S = floor(Time%60)
+        H = floor(M/60)
+        M = floor(M%60)
+        
+        tab = [H, M, S]
+        
+        return tab
+    
+    def PlayMusic(self):
+    
+        if not pygame.mixer.music.get_busy():
+            pygame.mixer.music.load(self.Tableau_Musique[random.randrange(len(self.Tableau_Musique))])
+            pygame.mixer.music.play()
                     
     def afficheE(self, fenetre, fond):
         fenetre.blit(fond, (0,0))
@@ -180,60 +257,58 @@ class Niveau(object):
         Level_Difficulty = 0
         
         if Difficulte == 10:
-            Difficulty =  0.05
-        if Difficulte == 9:
-            Difficulty =  0.10
-        if Difficulte == 8:
-            Difficulty =  0.12
-        if Difficulte == 7:
-            Difficulty =  0.25
-        if Difficulte == 5:
-            Difficulty =  0.5
-        if Difficulte == 6:
-            Difficulty =  0.75
-        if Difficulte == 4:
             Difficulty =  1
-        if Difficulte == 3:
-            Difficulty =  1.25
-        if Difficulte == 2:
-            Difficulty =  1.5
-        if Difficulte == 1:
-            Difficulty =  1.75
-        if Difficulte == 0:
+        if Difficulte == 9:
             Difficulty =  2
+        if Difficulte == 8:
+            Difficulty =  3
+        if Difficulte == 7:
+            Difficulty =  4
+        if Difficulte == 5:
+            Difficulty =  5
+        if Difficulte == 6:
+            Difficulty =  6
+        if Difficulte == 4:
+            Difficulty =  7
+        if Difficulte == 3:
+            Difficulty =  8
+        if Difficulte == 2:
+            Difficulty =  9
+        if Difficulte == 1:
+            Difficulty =  10
             
         if self.Nombre_Ennemis_Tue >= 0:
-            Level_Difficulty = 110*Difficulty
+            Level_Difficulty = 10*Difficulty
         if self.Nombre_Ennemis_Tue >= 10:
-            Level_Difficulty = 95*Difficulty
+            Level_Difficulty = 9*Difficulty
         if self.Nombre_Ennemis_Tue >= 25:
-            Level_Difficulty = 60*Difficulty
-        if self.Nombre_Ennemis_Tue >= 50:
-            Level_Difficulty = 50*Difficulty
-        if self.Nombre_Ennemis_Tue >= 100:
-            Level_Difficulty = 35*Difficulty
-        if self.Nombre_Ennemis_Tue >= 200:
-            Level_Difficulty = 20*Difficulty
-        if self.Nombre_Ennemis_Tue >= 400:
-            Level_Difficulty = 16*Difficulty
-        if self.Nombre_Ennemis_Tue >= 750:
-            Level_Difficulty = 12*Difficulty
-        if self.Nombre_Ennemis_Tue >= 1000:
             Level_Difficulty = 8*Difficulty
-        if self.Nombre_Ennemis_Tue >= 2500:
+        if self.Nombre_Ennemis_Tue >= 50:
+            Level_Difficulty = 7*Difficulty
+        if self.Nombre_Ennemis_Tue >= 100:
+            Level_Difficulty = 6*Difficulty
+        if self.Nombre_Ennemis_Tue >= 200:
+            Level_Difficulty = 5*Difficulty
+        if self.Nombre_Ennemis_Tue >= 400:
             Level_Difficulty = 4*Difficulty
-        if self.Nombre_Ennemis_Tue >= 5000:
+        if self.Nombre_Ennemis_Tue >= 750:
+            Level_Difficulty = 3*Difficulty
+        if self.Nombre_Ennemis_Tue >= 1000:
             Level_Difficulty = 2*Difficulty
+        if self.Nombre_Ennemis_Tue >= 2500:
+            Level_Difficulty = 1*Difficulty
             
         return Level_Difficulty
         
+#---------------------------------------------------------------------
+
 class Screen(object):
     
-    def __init__(self, size):
+    def __init__(self, size, name, IconImg):
         
         info = pygame.display.Info()
         
-        self.Font = pygame.font.Font("../Polices/Viner Hand ITC.ttf", 25)
+        self.Font = pygame.font.SysFont("Viner Hand ITC", 25)
         
         self.nativeSize = size
         
@@ -245,6 +320,9 @@ class Screen(object):
         self.ScaleRect      = pygame.Rect((2, self.nativeSize[1] - 22), (20, 20))
         
         self.fenetre = pygame.Surface(self.nativeSize)
+        Icon = pygame.image.load(IconImg).convert_alpha()
+        pygame.display.set_caption(name)
+        pygame.display.set_icon(Icon)
         
         self.delais = 0.05
         self.T0 = time.clock()

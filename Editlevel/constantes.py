@@ -4,61 +4,69 @@ largeur_jeu = 64*tabx
 hauteur_jeu = 64*taby
 
 #------------------------------------------------------------
+Defeat_Song          = "../musique/Defeat.wav"
 
 fond                 = "../Img/Fonds/fond1.png"
 fond_Edit            = "../Img/Fonds/fond1.png"
+
 titre_editeur        = "Editeur - StormTrays"
-titre_jeu            = "StormTrays"
-save                 = "../Img/Boutons/save.png"
-ouvrir               = "../Img/Boutons/open.png"
-efface               = "../Img/Boutons/efface.png"
-joue                 = "../Img/Boutons/joue.png"
-chem1                = "../Img/Chemins/chem1.png"
+titre_jeu            = "StormTrays - 0 - Alpha 1.3"
+IconImg              = "../Img/Icon.png"
+
+croix1E              = "../Img/Chemins/croix1_Edit.png"
+tour2E               = "../Img/Chemins/tour2_Edit.png"
+tour1E               = "../Img/Chemins/tour1_Edit.png"
 chem1E               = "../Img/Chemins/chem1_Edit.png"
+croix1               = "../Img/Chemins/croix1.png"
+chem1                = "../Img/Chemins/chem1.png"
 tour2                = "../Img/Chemins/tour2.png"
 tour1                = "../Img/Chemins/tour1.png"
-tour1E               = "../Img/Chemins/tour1_Edit.png"
-tour2E               = "../Img/Chemins/tour2_Edit.png"
-efface               = "../Img/Boutons/efface.png"
-croix1               = "../Img/Chemins/croix1.png"
-croix1E              = "../Img/Chemins/croix1_Edit.png"
-poubelle             = "../Img/poubelle.png"
-poubelleE            = "../Img/poubelle.png"
-sauve                = "../Img/Boutons/save.png"
-ouvre                = "../Img/Boutons/open.png"
-joue                 = "../Img/Boutons/jouer.png"
+
+fondm                = "../Img/FondMenu/FondMenuPrincipal.png"
+LoadingScreen        = "../Img/FondMenu/LoadingScreen.png"
+LoadLevelImg         = "../Img/FondMenu/LoadLevel.png"
+LoadBar              = "../Img/FondMenu/LoadBar.png"
+
+TpsRestInvocSombre__ = "../Img/Perso/TpsInvocSomb.png"
+TpsRestInvoc__       = "../Img/Perso/TpsInvoc.png"
+
+
+boutonmenutour       = "../Img/Boutons/boutonmenutour.png"
+optionpaus           = "../Img/Boutons/optionpause.png"
+accelerex            = "../Img/Boutons/accelerex.png"
+quitpaus             = "../Img/Boutons/quitpaus.png"
+accelere             = "../Img/Boutons/accelere.png"
+reprise              = "../Img/Boutons/reprise.png"
 credits              = "../Img/Boutons/credits.png"
 option               = "../Img/Boutons/options.png"
-quit                 = "../Img/Boutons/quitter.png"
-fondm                = "../Img/FondMenu/FondMenuPrincipal.png"
 retour               = "../Img/Boutons/retour.png"
+efface               = "../Img/Boutons/efface.png"
+ouvrir               = "../Img/Boutons/ouvrir.png"
+pause                = "../Img/Boutons/pause.png"
+joue                 = "../Img/Boutons/jouer.png"
+sauve                = "../Img/Boutons/save.png"
+Sell                 = "../Img/Boutons/Sell.png"
+save                 = "../Img/Boutons/save.png"
+quit                 = "../Img/Boutons/quit.png"
+
+poubelle             = "../Img/poubelle.png"
+poubelleE            = "../Img/poubelle.png"
 fort1                = "../Img/fort1.png"
 fort1E               = "../Img/fort1.png"
 sombre               = "../Img/sombre.png"
 sombre__             = "../Img/SombreFull.png"
-boutonmenutour       = "../Img/Boutons/boutonmenutour.png"
 mt                   = "../Img/menutours.png"
-pause                = "../Img/Boutons/pause.png"
-accelere             = "../Img/Boutons/accelere.png"
-accelerex            = "../Img/Boutons/accelerex.png"
 carrea               = "../Img/truc1.png"
 Invoc                = "../Img/Invoc.png"
 Plus__               = "../Img/Plus.png"
 Moins__              = "../Img/Moins.png"
 Fond_Menu_Opti       = "../Img/Fond_Options.png"
-reprise              = "../Img/Boutons/reprise.png"
-quitpaus             = "../Img/Boutons/quitpaus.png"
-optionpaus           = "../Img/Boutons/optionpause.png"
 XpBar                = "../Img/Xp.png"
 Locked__             = "../Img/Locked.png"
-TpsRestInvoc__       = "../Img/Perso/TpsInvoc.png"
-TpsRestInvocSombre__ = "../Img/Perso/TpsInvocSomb.png"
 InfoLvl5Img          = "../Img/Lvl5Info.png"
-Coin                 = "../Img/GoldIcon.png"
 DefeatTxt            = "../Img/Textes/Defeat.png"
+Coin                 = "../Img/GoldIcon.png"
 ScaleImg             = "../Img/Scale.png"
-Defeat_Song          = "../musique/Defeat.wav"
-
 #------------------------------------------------------------
 
 mechimg1       = "../Img/Ennemis/Orc/Orc1.png"
@@ -152,6 +160,13 @@ Catapulte_4    = "../Img/Tours/Catapulte/Catapulte4.png"
 Catapulte_5    = "../Img/Tours/Catapulte/Catapulte5.png"
 Catapulte_6    = "../Img/Tours/Catapulte/Catapulte6.png"
 
+Baliste_1      = "../Img/Tours/Baliste/Baliste1.png"
+Baliste_2      = "../Img/Tours/Baliste/Baliste1.png"
+Baliste_3      = "../Img/Tours/Baliste/Baliste1.png"
+Baliste_4      = "../Img/Tours/Baliste/Baliste1.png"
+Baliste_5      = "../Img/Tours/Baliste/Baliste1.png"
+Baliste_6      = "../Img/Tours/Baliste/Baliste1.png"
+
 #-----------------------------------------------------------
 
 AnimLvlUp01 = "../Img/LevelUp/AnimLvlUp01.png"
@@ -164,3 +179,26 @@ AnimLvlUp07 = "../Img/LevelUp/AnimLvlUp07.png"
 AnimLvlUp08 = "../Img/LevelUp/AnimLvlUp08.png"
 AnimLvlUp09 = "../Img/LevelUp/AnimLvlUp09.png"
 AnimLvlUp10 = "../Img/LevelUp/AnimLvlUp10.png"
+
+#-----------------------------------------------------------
+
+GoldGained = [1]
+GoldGained[0] = 0
+
+DicoTowersBought                = {}
+DicoTowersBought["Archer"]      = 0
+DicoTowersBought["Catapulte Basique"] = 0
+DicoTowersBought["Catapulte Precise"] = 0
+DicoTowersBought["Catapulte Rapide"] = 0
+DicoTowersBought["Catapulte tres rapide"] = 0
+DicoTowersBought["Baliste"]     = 0
+
+DicoEnnemisKilled           = {}
+DicoEnnemisKilled["Dragon"] = 0
+DicoEnnemisKilled["Golem"]  = 0
+DicoEnnemisKilled["Goblin"] = 0
+DicoEnnemisKilled["Dwarf"]  = 0
+DicoEnnemisKilled["Orc"]    = 0
+DicoEnnemisKilled["Knight"] = 0
+DicoEnnemisKilled["Wolf"]   = 0
+DicoEnnemisKilled["Ghost"]  = 0

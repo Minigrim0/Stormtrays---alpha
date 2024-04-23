@@ -1,4 +1,5 @@
 {
+"Name" : "Wolf",
 "Img" : "../Img/Ennemis/Wolf/Wolf1.png",
 "ImgFolder" : "../Img/Ennemis/Wolf/*.png",
 "ImgFolderRet" : "../Img/Ennemis/Wolf/Ret/*.png",

@@ -1,4 +1,6 @@
 import pygame
+import random
+import time
 from pygame.locals import *
 from constantes import *
 from math import *
@@ -19,9 +21,18 @@ class Perso(object):
         self.Level_Roi    = 0
         self.Anim_King_i  = 0
         self.XpToAdd      = 0
+        self.TimeCounter  = 0
+        self.TimeElapsed  = 0
+        self.T0 = time.clock()
         
-        self.Is_Returned = False
-        self.target      = None
+        self.Is_Returned   = False
+        self.target        = None
+        self.Anim_King     = False
+        self.Anim_King_Ret = False
+        self.capacite1     = False
+        self.capacite2     = False
+        self.AnimAttak     = False
+        self.IsMoving      = False
         
         self.King_1          = pygame.image.load(king_1        ).convert_alpha()
         self.King_2          = pygame.image.load(king_2        ).convert_alpha()
@@ -47,85 +58,84 @@ class Perso(object):
         
     def level_up(self):
         
-        lvlUp = False
-        
-        lvlRoiV = self.Level_Roi
-        
         if self.xp >= self.objectif:
-            self.xp = 0
-            self.Level_Roi += 1
-            self.objectif = (self.Level_Roi ** 2)*20
-            
-        if lvlRoiV < self.Level_Roi:
-            lvlUp = True
         
-        return lvlUp
+            self.xp = self.xp-self.objectif
+            self.Level_Roi += 1
             
-    def anim(self, tab):
+            self.objectif = (self.Level_Roi ** 2)*20
+            self.Degats   = self.Level_Roi*0.5 + 3
+            self.Vitesse  = self.Level_Roi*0.25 + 5
+            return True
+            
+        else:
+            return False
+        
+    def anim(self):
+    
         if self.i == 12:
             self.i = 0
-        self.nanim = tab[self.i//2]
+        self.nanim = self.Perso_Tab[self.i//2]
         self.Is_Returned = False
         
-    def anim_ret(self, tab):
+    def anim_ret(self):
+    
         if self.i == 12:
             self.i = 0
-        self.nanim = tab[self.i//2]
+        self.nanim = self.Perso_Tab_ret[self.i//2]
         self.Is_Returned = True
     
     def AnimKingAttakRet(self, Liste_Mechants, niveau, Coin):
     
         self.Anim_King_i += 1
             
-        if self.Anim_King_i == 1:
-            self.nanim = self.King_Attak_ret
-            return True
-            
-        elif self.Anim_King_i == 4:
-            self.nanim = self.King_Attak2_ret
-            try:
-                if self.target.enleve_vie(self.Degats, Liste_Mechants, self.target, niveau, Coin):
-                    self.XpToAdd += self.target.vie_bas/3
-            except:
-                self.target = None
-            return True
-            
-        elif self.Anim_King_i == 8:
+        if self.Anim_King_i == 8:
             self.i = 6
-            self.anim_ret(self.Perso_Tab_ret)
+            self.anim_ret()
             self.Anim_King_i = 0
             self.Is_Returned = True
-            return False
+            self.AnimAttak = False
         
-        else:
-            return True
+            if not self.target:
+                self.AnimAttak = False
+                
+        elif self.Anim_King_i >= 4:
+            self.nanim = self.King_Attak2_ret
+            try:
+                if self.target.enleve_vie(self.Degats/4, Liste_Mechants, self.target, niveau, Coin, self):
+                    self.XpToAdd += self.target.vie_bas/3
+                    self.target = False
+            except:
+                self.target = False
+            
+        elif self.Anim_King_i >= 1:
+            self.nanim = self.King_Attak_ret
                 
     def AnimKingAttak(self, Liste_Mechants, niveau, Coin):
     
         self.Anim_King_i += 1
             
-        if self.Anim_King_i == 1:
-            self.nanim = self.King_Attak
-            return True
-            
-        elif self.Anim_King_i == 4:
-            self.nanim = self.King_Attak2
-            try:
-                if self.target.enleve_vie(self.Degats, Liste_Mechants, self.target, niveau, Coin):
-                    self.XpToAdd += self.target.vie_bas/3
-            except:
-                self.target = None
-            return True
-            
-        elif self.Anim_King_i == 8:
+        if self.Anim_King_i == 8:
             self.i = 6
-            self.anim(self.Perso_Tab)
+            self.anim()
             self.Anim_King_i = 0
             self.Is_Returned = False
-            return False
+            self.AnimAttak = False
         
-        else:
-            return True
+            if not self.target:
+                self.AnimAttak = False
+                
+        elif self.Anim_King_i >= 4:
+            self.nanim = self.King_Attak2
+            try:
+                if self.target.enleve_vie(self.Degats/4, Liste_Mechants, self.target, niveau, Coin, self):
+                    self.XpToAdd += self.target.vie_bas/3
+                    self.target = False
+            except:
+                self.target = False
+            
+        elif self.Anim_King_i >= 1 and self.Anim_King_i < 4:
+            self.nanim = self.King_Attak
         
     def AnimXp(self):
     
@@ -149,21 +159,46 @@ class Perso(object):
             self.xp += 1
         else:
             pass
+    
+    def AnimMenus(self, Liste_Mechants, niveau, Coin):
         
-    def vit(self, tab, tabret, vitesse):
+        self.Vitesse = 10
         
+        if not Liste_Mechants:
+            TimeElapsed = time.clock()-self.T0
+            self.T0 = time.clock()
+            self.TimeCounter += TimeElapsed
+            
+            if self.TimeCounter >= random.randrange(4, 10):
+                self.TimeCounter = 0
+                self.targetCoordx = random.randrange(1056)
+                self.targetCoordy = random.randrange(608)
+        else:
+            self.target = Liste_Mechants[0]
+            Liste_Mechants[0].IsAttacked = True
+        self.vit(Liste_Mechants, niveau, Coin)
+            
+    def vit(self, Liste_Mechants, niveau, Coin):
+    
         self.AnimXp()
         
-        if self.target:
+        if self.AnimAttak:
+            if self.Is_Returned:
+                self.AnimKingAttakRet(Liste_Mechants, niveau, Coin)
+            elif not self.Is_Returned:
+                self.AnimKingAttak(Liste_Mechants, niveau, Coin)
+        
+        elif self.target:
             
             try:
                 self.targetCoordx = self.target.PosAbsolue[0]
                 self.targetCoordy = self.target.PosAbsolue[1]
             except:
-                pass
+                self.target = False
             
-            if sqrt(((self.posx - self.target.PosAbsolue[0]) ** 2) + ((self.posy - self.target.PosAbsolue[1]) ** 2)) > vitesse:
+            if sqrt(((self.posx - self.target.PosAbsolue[0]) ** 2) + ((self.posy - self.target.PosAbsolue[1]) ** 2)) > self.Vitesse:
         
+                self.AnimAttak = False
                 delta_y = self.target.PosAbsolue[1] - self.posy
                 delta_x = self.target.PosAbsolue[0] - self.posx
                 
@@ -185,20 +220,20 @@ class Perso(object):
                 self.posx_Old = self.posx
                 self.posy_Old = self.posy
                 
-                self.posy = self.posy + sin(angle)*vitesse
-                self.posx = self.posx + cos(angle)*vitesse
+                self.posy = self.posy + sin(angle)*self.Vitesse
+                self.posx = self.posx + cos(angle)*self.Vitesse
                 
                 self.i += 1
                 if self.Is_Returned:
-                    self.anim_ret(tabret)
+                    self.anim_ret()
                 else:
-                    self.anim(tab)
+                    self.anim()
             else:
-                return True
+                self.AnimAttak = True
         
         else:
             
-            if sqrt(((self.posx - self.targetCoordx) ** 2) + ((self.posy - self.targetCoordy) ** 2)) > vitesse:
+            if sqrt(((self.posx - self.targetCoordx) ** 2) + ((self.posy - self.targetCoordy) ** 2)) > self.Vitesse:
         
                 delta_y = self.targetCoordy - self.posy
                 delta_x = self.targetCoordx - self.posx
@@ -221,11 +256,11 @@ class Perso(object):
                 self.posx_Old = self.posx
                 self.posy_Old = self.posy
                 
-                self.posy = self.posy + sin(angle)*vitesse
-                self.posx = self.posx + cos(angle)*vitesse
+                self.posy = self.posy + sin(angle)*self.Vitesse
+                self.posx = self.posx + cos(angle)*self.Vitesse
                 
                 self.i += 1
                 if self.Is_Returned:
-                    self.anim_ret(tabret)
+                    self.anim_ret()
                 else:
-                    self.anim(tab)
+                    self.anim()

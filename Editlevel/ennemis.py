@@ -4,6 +4,7 @@ from constantes import *
 from classes import *
 import math
 import json
+import codecs
 import glob
 
 pygame.init()
@@ -32,6 +33,7 @@ class Ennemi_IG(object):
         contenu         = f.read()
         self.propriete  = json.loads(contenu)
         
+        self.Name = self.propriete["Name"]
         self.image2Scale = pygame.image.load(self.propriete["Img"]).convert_alpha()
         self.meurt = pygame.mixer.Sound(self.propriete["DeathSound"])
         self.vie = self.propriete["LifePts"]
@@ -62,9 +64,14 @@ class Ennemi_IG(object):
             position = tableau[x,y]
             if position == ('c1', 0):
                 self.posy = y
+                self.PosAbsolue = (0, y*64)
                 self.HitBox = pygame.Rect((0, y), (64, 64))
                 
-    def bouge(self, tableau, fenetre, niveau, Liste_Mechants, coin):
+    def BlitInPlace(self, screen):
+        
+        screen.blit(self.image, (self.PosAbsolue))
+                
+    def bouge(self, tableau, fenetre, niveau, Liste_Mechants, coin, King):
         
         self.Vie_Rect = pygame.Surface((self.vie*(60/self.vie_bas), 3))
         self.Vie_Rect.fill((0, 255, 0))
@@ -106,7 +113,12 @@ class Ennemi_IG(object):
             self.Dir_x = 0
             self.Dir_y = 1
             self.Returned = True
-    
+            
+        elif position == ('x1', 0) or position == ('x1', 90) or position == ('x1', 180) or position == ('x1', 270):
+            self.Dir_x = self.Dir_x
+            self.Dir_y = self.Dir_y
+            self.Returned = self.Returned
+            
         else:
             print("Position erronée")
             self.pose_ennemi(tableau, fenetre)
@@ -135,9 +147,9 @@ class Ennemi_IG(object):
             
         if self.posx == niveau.pos_Chateau[0] and self.posy == niveau.pos_Chateau[1]:
             niveau.Vie_Chateau -= self.vie//1.5
-            self.enleve_vie(2000, Liste_Mechants, self, niveau, coin)
+            self.enleve_vie(2000, Liste_Mechants, self, niveau, coin, King)
                 
-    def enleve_vie(self, viemoins, liste_mech, ennemi, niveau, coin):
+    def enleve_vie(self, viemoins, liste_mech, ennemi, niveau, coin, King):
         
         self.vie -= viemoins
         self.IsAttacked = True
@@ -145,14 +157,17 @@ class Ennemi_IG(object):
         
         if self.vie <= 0:
             
+            DicoEnnemisKilled[self.Name] += 1
             liste_mech.remove(ennemi)
             self.meurt.play()
-            if niveau.capacite1 == True:
-                FlyingGold = GoldAnim(self.PosAbsolue[0] + 32, self.PosAbsolue[1] + 32, self.vie_bas)
+            if King.capacite1 == True:
+                FlyingGold = GoldAnim(self.PosAbsolue[0] + self.Height//2, self.PosAbsolue[1] + self.Height//2, self.vie_bas)
+                GoldGained[0] += self.vie_bas
                 niveau.GoldTab.append(FlyingGold)
                 niveau.gold += self.vie_bas
             else:
                 FlyingGold = GoldAnim(self.PosAbsolue[0] + 32, self.PosAbsolue[1] + 32, self.vie_bas//2)
+                GoldGained[0] += self.vie_bas//2
                 niveau.GoldTab.append(FlyingGold)
                 niveau.gold += self.vie_bas//2
             niveau.Nombre_Ennemis_Tue += 1

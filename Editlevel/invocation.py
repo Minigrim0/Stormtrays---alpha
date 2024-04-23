@@ -11,7 +11,7 @@ class Invocation(object):
 
     def __init__(self,  niveau, Tab, Tab_Ret, addDegats, King):
         
-        self.myfont1 = pygame.font.Font("../Polices/Viner Hand ITC.ttf",  25)
+        self.myfont = pygame.font.SysFont("Viner Hand ITC",  25)
         
         self.Img = pygame.image.load(Invocation_1).convert_alpha()
         self.nanim = pygame.transform.scale(self.Img, (int(96), int(96)))
@@ -43,18 +43,18 @@ class Invocation(object):
         
         self.xp = 0
         
-    def vit(self, fenetre, Liste_Mechants, niveau,  coin):
+    def vit(self, fenetre, Liste_Mechants, niveau,  coin, King):
         
         self.tic += 1
         
-        TimeLeftPrint = self.myfont1.render(str(self.Duree_Invocation), 1, (0, 0, 25))
+        TimeLeftPrint = self.myfont.render(str(self.Duree_Invocation), 1, (0, 0, 25))
         
         if self.tic == 24:
             self.Duree_Invocation -= 1
             self.tic = 0
             
         if Liste_Mechants:
-            self.bouge_vers_ennemi(Liste_Mechants[0],  Liste_Mechants, niveau, fenetre, coin)
+            self.bouge_vers_ennemi(Liste_Mechants[0],  Liste_Mechants, niveau, fenetre, coin, King)
             
         if self.Duree_Invocation == 0:
             return False
@@ -64,7 +64,7 @@ class Invocation(object):
         
         return True
         
-    def bouge_vers_ennemi(self, ennemi,  Liste_Mechants, niveau, fenetre, coin):
+    def bouge_vers_ennemi(self, ennemi,  Liste_Mechants, niveau, fenetre, coin, King):
         
         if sqrt(((self.posx - ennemi.PosAbsolue[0]) ** 2) + ((self.posy - ennemi.PosAbsolue[1]) ** 2)) > 32 and self.Anim_King_i == 0:
         
@@ -114,7 +114,7 @@ class Invocation(object):
                     self.anim(self.Tab)
                     fenetre.blit(self.nanim, (self.posx, self.posy))
                     self.Anim_King_i = 0
-                    ennemi.enleve_vie(self.degats, Liste_Mechants, ennemi, niveau, coin)
+                    ennemi.enleve_vie(self.degats, Liste_Mechants, ennemi, niveau, coin, King)
                     if ennemi.vie - self.degats <= 0:
                         self.xp += ennemi.vie_bas/3
                     
@@ -137,7 +137,7 @@ class Invocation(object):
                     self.anim(self.TabRet)
                     fenetre.blit(self.nanim, (self.posx, self.posy))
                     self.Anim_King_i = 0
-                    ennemi.enleve_vie(self.degats, Liste_Mechants, ennemi, niveau, coin)
+                    ennemi.enleve_vie(self.degats, Liste_Mechants, ennemi, niveau, coin, King)
                     if ennemi.vie - self.degats <= 0:
                         self.xp += ennemi.vie_bas/3
                     
